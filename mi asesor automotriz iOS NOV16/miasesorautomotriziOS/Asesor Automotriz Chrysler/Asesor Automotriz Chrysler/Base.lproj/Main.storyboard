@@ -4793,6 +4793,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nombreAgenciaLabel" destination="N04-LV-CMy" id="wap-GY-kS1"/>
+                        <outlet property="nombreAsesorLabel" destination="80N-KQ-eab" id="LMe-eN-Mkn"/>
                         <segue destination="svp-gO-6gd" kind="modal" identifier="r" id="pnN-qH-NGX"/>
                         <segue destination="CIR-LO-HCu" kind="modal" identifier="saltar" animates="NO" id="9J0-Ur-Pxv"/>
                     </connections>

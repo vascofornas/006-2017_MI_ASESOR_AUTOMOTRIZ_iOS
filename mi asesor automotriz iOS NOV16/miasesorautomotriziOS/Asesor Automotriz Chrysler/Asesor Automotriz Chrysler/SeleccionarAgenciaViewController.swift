@@ -17,14 +17,16 @@ class SeleccionarAgenciaViewController: UIViewController, UITextFieldDelegate  {
   
  
     
-    @IBOutlet weak var codigoTxt: UITextField!
+   @IBOutlet weak var nombreAgenciaLabel: UILabel!
+    @IBOutlet weak var nombreAsesorLabel: UILabel!
     
-       
- 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      print ("ESTOY EN VIEWDIDLOAD")
+     
+        
+        self.nombreAgenciaLabel.text = "message"
+        self.nombreAsesorLabel.text = "message2"
      
            }
     
