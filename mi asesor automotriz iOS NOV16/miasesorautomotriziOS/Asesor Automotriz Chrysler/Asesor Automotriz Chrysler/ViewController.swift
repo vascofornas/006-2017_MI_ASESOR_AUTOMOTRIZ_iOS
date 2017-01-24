@@ -14,7 +14,7 @@ import MessageUI
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate,MFMailComposeViewControllerDelegate{
 
     var celular: String = ""
-   var emailConsulta: String = ""
+    var emailConsulta: String = ""
     var apple: String = ""
     var id_agencia: String = ""
     var nombre_agencia: String = ""
@@ -25,10 +25,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate,M
     var email_asesor: String = ""
     var codigo_asesor: String = ""
     
-    let misDatos:UserDefaults = UserDefaults.standard
- @IBOutlet weak var AsesorTXT: UILabel!
     
-    @IBOutlet weak var actionSeminuevosButton: UIButton!
        
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,38 +33,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate,M
         
         print ("ESTOY EN PORTADA")
         
-        id_agencia = misDatos.string(forKey: "ID_AGENCIA")!
-        print ("ID AGENCIA:",id_agencia)
-        nombre_agencia = misDatos.string(forKey: "NOMBRE_AGENCIA")!
-        print ("NOMBRE AGENCIA:",nombre_agencia)
-        codigo_agencia = misDatos.string(forKey: "CODIGO_AGENCIA")!
-        print ("CODIGO AGENCIA:",codigo_agencia)
-        id_asesor = misDatos.string(forKey: "ID_ASESOR")!
-        print ("ID ASESOR:",id_asesor)
-        nombre_asesor = misDatos.string(forKey: "NOMBRE_ASESOR")!
-        print ("NOMBRE ASESOR:",nombre_asesor)
-        codigo_asesor = misDatos.string(forKey: "CODIGO_ASESOR")!
-        print ("CODIGO ASESOR:",codigo_asesor)
-        email_asesor = misDatos.string(forKey: "EMAIL_ASESOR")!
-        print ("EMAIL ASESOR:",email_asesor)
+    
         
-        self.AsesorTXT.text = self.nombre_asesor;
-        
-        //buscamos id del iphone
-        
-        
-        
-        if let key = misDatos.string(forKey: "ID_IPHONE"){
-            
-            print ("iphone id existe")
-        }
-        else {
-             print ("iphone id NO existe")
-            let mi_movil = randomStringWithLength (8)
-            misDatos.set(mi_movil, forKey: "ID_IPHONE")
-            print ("IPHONE ID:",mi_movil)
-        }
-        
+    
         
         
         

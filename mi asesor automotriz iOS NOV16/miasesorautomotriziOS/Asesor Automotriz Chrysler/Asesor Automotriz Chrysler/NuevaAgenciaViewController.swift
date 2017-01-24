@@ -12,28 +12,41 @@ import Foundation
 import MessageUI
 import MediaPlayer
 
-class SeleccionarAgenciaViewController: UIViewController, UITextFieldDelegate  {
+class NuevaAgenciaViewController: UIViewController, UITextFieldDelegate  {
 
-  
- 
-    
-   @IBOutlet weak var nombreAgenciaLabel: UILabel!
-    @IBOutlet weak var nombreAsesorLabel: UILabel!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
      
         
-        self.nombreAgenciaLabel.text = "message"
-        self.nombreAsesorLabel.text = "message2"
-     
-           }
+      
     
+        
+
+        
+    }
+    
+   
+    @IBAction func botonAceptarAction(_ sender: Any) {
+        
+    }
+    @IBAction func botonSeleccionarAction(_ sender: Any) {
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
        
-      
+      if let x = UserDefaults.standard.object(forKey: "miAgencia") as? String
+      {
+        
+        
+        }
+        if let y = UserDefaults.standard.object(forKey: "miAsesor") as? String
+        {
+            
+            
+        }
        
     }
 
@@ -47,17 +60,10 @@ class SeleccionarAgenciaViewController: UIViewController, UITextFieldDelegate  {
    
 
     
-    @IBAction func botonAceptarAction(_ sender: UIButton) {
-        
-     
-    }
+   
     
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        
-        
-     
-        }
+    
     }
 
 

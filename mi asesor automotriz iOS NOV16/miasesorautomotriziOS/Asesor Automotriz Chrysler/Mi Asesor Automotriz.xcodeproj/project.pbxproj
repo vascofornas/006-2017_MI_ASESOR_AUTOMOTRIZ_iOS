@@ -30,7 +30,7 @@
 		8075D01B1CCBBD170019455D /* Aseguradoras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075D01A1CCBBD170019455D /* Aseguradoras.swift */; };
 		8076F9751CCAA9D900BB51D0 /* Tramites4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076F9741CCAA9D900BB51D0 /* Tramites4.swift */; };
 		8076F9771CCAE1E300BB51D0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8076F9761CCAE1E300BB51D0 /* CoreTelephony.framework */; };
-		809348991CDD1B05008D3CC5 /* SeleccionarAgenciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809348981CDD1B05008D3CC5 /* SeleccionarAgenciaViewController.swift */; };
+		809348991CDD1B05008D3CC5 /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809348981CDD1B05008D3CC5 /* InicioViewController.swift */; };
 		8093489B1CDD303F008D3CC5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093489A1CDD303F008D3CC5 /* Reachability.swift */; };
 		80A3EC4F1C48D8B000634BE0 /* CitaServicio2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A3EC4E1C48D8B000634BE0 /* CitaServicio2.swift */; };
 		80A44BAF1C4E103800B9F0C3 /* CitaServicioSinFoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A44BAE1C4E103800B9F0C3 /* CitaServicioSinFoto.swift */; };
@@ -42,14 +42,14 @@
 		80A44BBF1C4FD5AC00B9F0C3 /* CostoServicio4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A44BBE1C4FD5AC00B9F0C3 /* CostoServicio4.swift */; };
 		80A44BC11C4FD5F300B9F0C3 /* CostoServicio5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A44BC01C4FD5F300B9F0C3 /* CostoServicio5.swift */; };
 		80A44BC71C4FDFB500B9F0C3 /* CosteServicio2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A44BC61C4FDFB500B9F0C3 /* CosteServicio2.swift */; };
+		80B3B6F31E3402370007BC8B /* NuevaAgenciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B3B6F21E3402360007BC8B /* NuevaAgenciaViewController.swift */; };
+		80B3B6F41E36DF0C0007BC8B /* Alamofire.framework in Copy Frameworks (1 item) */ = {isa = PBXBuildFile; fileRef = 809565541DD3DDFC00B40508 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		80BF463E1C4AACF400E2E406 /* CitaServicio4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BF463D1C4AACF300E2E406 /* CitaServicio4.swift */; };
 		80BF46401C4AC59E00E2E406 /* CitaServicio5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BF463F1C4AC59E00E2E406 /* CitaServicio5.swift */; };
 		80BF46421C4ACA1C00E2E406 /* CitaServicio6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BF46411C4ACA1C00E2E406 /* CitaServicio6.swift */; };
 		80BF46461C4AEAFD00E2E406 /* CitaServicio7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BF46451C4AEAFC00E2E406 /* CitaServicio7.swift */; };
-		80C6637F1CE06A2100099141 /* SeleccionarAsesorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6637E1CE06A2100099141 /* SeleccionarAsesorViewController.swift */; };
 		80C6C17D1C4B6192006B68DB /* CitaServicio8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6C17C1C4B6192006B68DB /* CitaServicio8.swift */; };
 		80C6C1811C4C275F006B68DB /* CitaServicioConFoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6C1801C4C275F006B68DB /* CitaServicioConFoto.swift */; };
-		80D75AFB1CE18872005A60D4 /* MostrarAgenciaAsesorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D75AFA1CE18871005A60D4 /* MostrarAgenciaAsesorViewController.swift */; };
 		80D9A90E1C501A1100334544 /* CostoServicio6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9A90D1C501A1100334544 /* CostoServicio6.swift */; };
 		80E4CF971C40345B0032AFA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4CF961C40345B0032AFA6 /* AppDelegate.swift */; };
 		80E4CF991C40345B0032AFA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4CF981C40345B0032AFA6 /* ViewController.swift */; };
@@ -161,6 +161,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				80B3B6F41E36DF0C0007BC8B /* Alamofire.framework in Copy Frameworks (1 item) */,
 			);
 			name = "Copy Frameworks (1 item)";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,7 +192,7 @@
 		8075D01A1CCBBD170019455D /* Aseguradoras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aseguradoras.swift; sourceTree = "<group>"; };
 		8076F9741CCAA9D900BB51D0 /* Tramites4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tramites4.swift; sourceTree = "<group>"; };
 		8076F9761CCAE1E300BB51D0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		809348981CDD1B05008D3CC5 /* SeleccionarAgenciaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeleccionarAgenciaViewController.swift; sourceTree = "<group>"; };
+		809348981CDD1B05008D3CC5 /* InicioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InicioViewController.swift; sourceTree = "<group>"; };
 		8093489A1CDD303F008D3CC5 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		809565481DD3DDF900B40508 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		809565641DD3DF1B00B40508 /* Haneke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Haneke.xcodeproj; path = "../../Haneke-master/Haneke.xcodeproj"; sourceTree = "<group>"; };
@@ -205,14 +206,13 @@
 		80A44BBE1C4FD5AC00B9F0C3 /* CostoServicio4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostoServicio4.swift; sourceTree = "<group>"; };
 		80A44BC01C4FD5F300B9F0C3 /* CostoServicio5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostoServicio5.swift; sourceTree = "<group>"; };
 		80A44BC61C4FDFB500B9F0C3 /* CosteServicio2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosteServicio2.swift; sourceTree = "<group>"; };
+		80B3B6F21E3402360007BC8B /* NuevaAgenciaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NuevaAgenciaViewController.swift; sourceTree = "<group>"; };
 		80BF463D1C4AACF300E2E406 /* CitaServicio4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitaServicio4.swift; sourceTree = "<group>"; };
 		80BF463F1C4AC59E00E2E406 /* CitaServicio5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitaServicio5.swift; sourceTree = "<group>"; };
 		80BF46411C4ACA1C00E2E406 /* CitaServicio6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitaServicio6.swift; sourceTree = "<group>"; };
 		80BF46451C4AEAFC00E2E406 /* CitaServicio7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitaServicio7.swift; sourceTree = "<group>"; };
-		80C6637E1CE06A2100099141 /* SeleccionarAsesorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeleccionarAsesorViewController.swift; sourceTree = "<group>"; };
 		80C6C17C1C4B6192006B68DB /* CitaServicio8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitaServicio8.swift; sourceTree = "<group>"; };
 		80C6C1801C4C275F006B68DB /* CitaServicioConFoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitaServicioConFoto.swift; sourceTree = "<group>"; };
-		80D75AFA1CE18871005A60D4 /* MostrarAgenciaAsesorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostrarAgenciaAsesorViewController.swift; sourceTree = "<group>"; };
 		80D9A90D1C501A1100334544 /* CostoServicio6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostoServicio6.swift; sourceTree = "<group>"; };
 		80E4CF931C40345B0032AFA6 /* Mi Asesor Automotriz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi Asesor Automotriz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80E4CF961C40345B0032AFA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -326,9 +326,8 @@
 				80A44BBE1C4FD5AC00B9F0C3 /* CostoServicio4.swift */,
 				80E4CF961C40345B0032AFA6 /* AppDelegate.swift */,
 				80E4CF981C40345B0032AFA6 /* ViewController.swift */,
-				809348981CDD1B05008D3CC5 /* SeleccionarAgenciaViewController.swift */,
-				80C6637E1CE06A2100099141 /* SeleccionarAsesorViewController.swift */,
-				80D75AFA1CE18871005A60D4 /* MostrarAgenciaAsesorViewController.swift */,
+				809348981CDD1B05008D3CC5 /* InicioViewController.swift */,
+				80B3B6F21E3402360007BC8B /* NuevaAgenciaViewController.swift */,
 				8019742D1C4880620027C3F0 /* CitaServicio1.swift */,
 				8075D0161CCB46450019455D /* Auxilio_Vial_Mex.swift */,
 				8075D01A1CCBBD170019455D /* Aseguradoras.swift */,
@@ -518,9 +517,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C6637F1CE06A2100099141 /* SeleccionarAsesorViewController.swift in Sources */,
 				80A44BB91C4FD28E00B9F0C3 /* CostoServicio1.swift in Sources */,
 				8075D01B1CCBBD170019455D /* Aseguradoras.swift in Sources */,
+				80B3B6F31E3402370007BC8B /* NuevaAgenciaViewController.swift in Sources */,
 				80A44BBF1C4FD5AC00B9F0C3 /* CostoServicio4.swift in Sources */,
 				80E4CF991C40345B0032AFA6 /* ViewController.swift in Sources */,
 				8045BE521CC9C67300B3FE98 /* Tramites2.swift in Sources */,
@@ -545,8 +544,7 @@
 				80C6C1811C4C275F006B68DB /* CitaServicioConFoto.swift in Sources */,
 				8019742E1C4880630027C3F0 /* CitaServicio1.swift in Sources */,
 				80A44BBD1C4FD57600B9F0C3 /* CostoServicio3.swift in Sources */,
-				80D75AFB1CE18872005A60D4 /* MostrarAgenciaAsesorViewController.swift in Sources */,
-				809348991CDD1B05008D3CC5 /* SeleccionarAgenciaViewController.swift in Sources */,
+				809348991CDD1B05008D3CC5 /* InicioViewController.swift in Sources */,
 				806D39361CE3F5D300AF5815 /* ShowSplashScreen.swift in Sources */,
 				80BF463E1C4AACF400E2E406 /* CitaServicio4.swift in Sources */,
 				802B7ACC1CFFA36F000D1DCA /* AutosTableViewCell.swift in Sources */,
