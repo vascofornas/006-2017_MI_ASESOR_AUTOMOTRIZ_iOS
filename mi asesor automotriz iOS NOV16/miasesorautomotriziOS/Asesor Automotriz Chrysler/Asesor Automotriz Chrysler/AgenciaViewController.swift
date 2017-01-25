@@ -12,7 +12,7 @@ import Foundation
 import MessageUI
 import MediaPlayer
 
-class NuevaAgenciaViewController: UIViewController, UITextFieldDelegate  {
+class AgenciaViewController: UIViewController, UITextFieldDelegate  {
 
     
 
@@ -28,12 +28,7 @@ class NuevaAgenciaViewController: UIViewController, UITextFieldDelegate  {
     }
     
    
-    @IBAction func botonAceptarAction(_ sender: Any) {
-        
-    }
-    @IBAction func botonSeleccionarAction(_ sender: Any) {
-        
-    }
+ 
     
     override func viewDidAppear(_ animated: Bool) {
        

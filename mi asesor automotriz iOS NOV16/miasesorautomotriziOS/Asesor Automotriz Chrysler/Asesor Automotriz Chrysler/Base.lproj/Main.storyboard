@@ -4764,7 +4764,6 @@
                                 </state>
                                 <connections>
                                     <action selector="botonSeleccionarAction:" destination="GUo-ES-Z6Y" eventType="touchUpInside" id="QY6-jv-5N2"/>
-                                    <segue destination="T3j-ok-vhj" kind="modal" id="oNy-07-mOl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -4929,10 +4928,10 @@
             </objects>
             <point key="canvasLocation" x="802.5" y="3247.5"/>
         </scene>
-        <!--Nueva Agencia View Controller-->
+        <!--Agencia View Controller-->
         <scene sceneID="NwP-mZ-IOO">
             <objects>
-                <viewController id="T3j-ok-vhj" customClass="NuevaAgenciaViewController" customModule="Mi_Asesor_Automotriz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="T3j-ok-vhj" customClass="AgenciaViewController" customModule="Mi_Asesor_Automotriz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qvb-DV-n6Z"/>
                         <viewControllerLayoutGuide type="bottom" id="a7E-EH-7Qu"/>
@@ -5039,7 +5038,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="equ-er-Uqn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2370" y="4158"/>
+            <point key="canvasLocation" x="-2386" y="4220"/>
         </scene>
     </scenes>
     <resources>
