@@ -10,6 +10,8 @@ import UIKit
 
 class AgenciaViewController: UIViewController, UITextFieldDelegate  {
 
+    @IBOutlet weak var direccionAgenciaLabel: UILabel!
+    @IBOutlet weak var nombreAgenciaLabel: UILabel!
     @IBOutlet weak var codigoTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
