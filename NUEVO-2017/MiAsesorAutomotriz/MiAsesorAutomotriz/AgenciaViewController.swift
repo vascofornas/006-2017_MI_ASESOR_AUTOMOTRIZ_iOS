@@ -46,5 +46,9 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
             
             return
         }
+        
+        let myUrl = NSURL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/getAgencia.php");
+        let request = NSMutableURLRequest(url:myUrl! as URL);
+        request.httpMethod = "POST";
     }
 }
