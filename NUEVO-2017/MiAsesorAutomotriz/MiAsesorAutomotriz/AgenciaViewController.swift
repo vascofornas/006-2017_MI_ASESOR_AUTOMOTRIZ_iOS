@@ -33,22 +33,61 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
 
     @IBAction func buscarButtonAction(_ sender: Any) {
         
+        let codigoAgencia = codigoTextField.text
         
-        let codigo = codigoTextField.text
-        
-        if (codigo?.isEmpty)!{
-            //display alert
-            
-            let myAlert = UIAlertController(title:"Aviso", message:"Debes escribir un código de Agencia",preferredStyle:UIAlertControllerStyle.alert);
-            let okAction = UIAlertAction(title:"Cerrar", style:UIAlertActionStyle.default, handler:nil)
+        if (codigoAgencia?.isEmpty)!
+        {
+            //
+            let myAlert = UIAlertController(title:"Aviso", message:"Debes introducir un código de agencia", preferredStyle:
+                UIAlertControllerStyle.alert);
+            let okAction = UIAlertAction(title:"Cerrar", style:
+                UIAlertActionStyle.default, handler:nil)
             myAlert.addAction(okAction);
-            self.present(myAlert, animated:true,completion:nil)
+            self.present(myAlert, animated: true, completion: nil)
+            
             
             return
         }
         
-        let myUrl = NSURL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/getAgencia.php");
-        let request = NSMutableURLRequest(url:myUrl! as URL);
+        let myURL = NSURL (string: "http://www.miasesorautomotriz.com/php_ios/scripts/getAgencia.php");
+        
+        let request = NSMutableURLRequest (url:myURL! as URL);
         request.httpMethod = "POST";
+        
+        let postString = ("nombreAgencia=\(codigoAgencia!)");
+        
+        request.httpBody = postString.data (using: String.Encoding.utf8);
+        
+        URLSession.shared.dataTask(with: request as URLRequest,
+                completionHandler: { (data, response,error) -> Void in
+                    
+                DispatchQueue.main.async
+                {
+                   if (error != nil)
+                   {
+                    //display an alert
+                    return
+                    }
+                    
+                    do {
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                    
+                    if let parseJSON = json {
+                        
+                        let codigo_de_agencia = parseJSON["codigo_agencia"];
+                    }
+                        
+                    }catch let error as NSError{
+                        print (error)
+                    }
+                }
+        }).resume()
+        
+        
+        
+        
+        
+        
+        
     }
 }
