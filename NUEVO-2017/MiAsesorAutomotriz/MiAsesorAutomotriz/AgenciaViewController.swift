@@ -66,6 +66,12 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                    if (error != nil)
                    {
                     //display an alert
+                    var myAlert = UIAlertController(title:"Aviso",message:error?.localizedDescription,
+                                                    preferredStyle:UIAlertControllerStyle.alert);
+                    let okAction = UIAlertAction(title:"Cerrar",style:UIAlertActionStyle.default, handler: nil);
+                    
+                    myAlert.addAction(okAction);
+                    self.present(myAlert,animated:true,completion:nil)
                     return
                     }
                     
@@ -74,8 +80,37 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                     
                     if let parseJSON = json {
                         
-                        let codigo_de_agencia = parseJSON["direccion_agencia"];
-                        print (codigo_de_agencia)
+                        let codigo_de_agencia = parseJSON["direccion_agencia"] as! String?
+                        
+                        if (codigo_de_agencia != nil){
+                            //pasamos los datos NSUserDefaults
+                            print (codigo_de_agencia!)
+                            
+                            let nombre_de_agencia = parseJSON["nombre_agencia"] as! String?
+                            let direccion_de_agencia = parseJSON["direccion_agencia"] as! String?
+                            
+                            
+                            
+                            
+                            let prefs = UserDefaults.standard
+                            prefs.setValue(codigo_de_agencia, forKey: "miCodigoAgencia")
+                             prefs.setValue(nombre_de_agencia, forKey: "miAgencia")
+                            prefs.setValue(direccion_de_agencia, forKey: "miDireccionAgencia")
+                            
+                            
+                            self.nombreAgenciaLabel.text = nombre_de_agencia
+                            self.direccionAgenciaLabel.text = direccion_de_agencia
+                        }
+                        else{
+                            //alert
+                            let mensaje = parseJSON["message"] as? String
+                            var myAlert = UIAlertController(title:"Aviso",message:mensaje,
+                                                            preferredStyle:UIAlertControllerStyle.alert);
+                            let okAction = UIAlertAction(title:"Cerrar",style:UIAlertActionStyle.default, handler: nil);
+                            
+                            myAlert.addAction(okAction);
+                            self.present(myAlert,animated:true,completion:nil)
+                        }
                     }
                         
                     }catch let error as NSError{
