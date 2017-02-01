@@ -74,7 +74,8 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                     
                     if let parseJSON = json {
                         
-                        let codigo_de_agencia = parseJSON["codigo_agencia"];
+                        let codigo_de_agencia = parseJSON["direccion_agencia"];
+                        print (codigo_de_agencia)
                     }
                         
                     }catch let error as NSError{
