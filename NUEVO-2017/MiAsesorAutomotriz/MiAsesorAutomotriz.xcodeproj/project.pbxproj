@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8092A0481E43F13900258268 /* AsesorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092A0471E43F13900258268 /* AsesorViewController.swift */; };
 		809A0A831E36F7EB00B47EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A0A821E36F7EB00B47EAC /* AppDelegate.swift */; };
 		809A0A851E36F7EC00B47EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A0A841E36F7EC00B47EAC /* ViewController.swift */; };
 		809A0A881E36F7EE00B47EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809A0A861E36F7EE00B47EAC /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8092A0471E43F13900258268 /* AsesorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsesorViewController.swift; sourceTree = "<group>"; };
 		809A0A7F1E36F7EA00B47EAC /* MiAsesorAutomotriz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiAsesorAutomotriz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		809A0A821E36F7EB00B47EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		809A0A841E36F7EC00B47EAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				809A0A8B1E36F7EE00B47EAC /* LaunchScreen.storyboard */,
 				809A0A8E1E36F7EF00B47EAC /* Info.plist */,
 				809A0A981E39888C00B47EAC /* AgenciaViewController.swift */,
+				8092A0471E43F13900258268 /* AsesorViewController.swift */,
 			);
 			path = MiAsesorAutomotriz;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				809A0A851E36F7EC00B47EAC /* ViewController.swift in Sources */,
+				8092A0481E43F13900258268 /* AsesorViewController.swift in Sources */,
 				809A0A831E36F7EB00B47EAC /* AppDelegate.swift in Sources */,
 				809A0A991E39888C00B47EAC /* AgenciaViewController.swift in Sources */,
 			);
