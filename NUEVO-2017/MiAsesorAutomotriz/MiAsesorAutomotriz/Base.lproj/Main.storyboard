@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-203" y="100"/>
+            <point key="canvasLocation" x="120" y="-58"/>
         </scene>
         <!--Agencia View Controller-->
         <scene sceneID="xKy-Pr-PwT">
@@ -244,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ge4-4N-vVV" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563.768115942029" y="23.64130434782609"/>
+            <point key="canvasLocation" x="1033" y="-58"/>
         </scene>
         <!--Asesor View Controller-->
         <scene sceneID="Hg6-kf-0MK">
@@ -262,17 +262,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona tu asesor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6b-he-7Aa">
-                                <rect key="frame" x="36" y="275" width="248" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VO4-gL-dGX">
-                                <rect key="frame" x="16" y="299" width="288" height="197"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEF-gL-9Wx">
                                 <rect key="frame" x="193" y="502" width="108" height="46"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -303,29 +292,52 @@
                                     <segue destination="LQU-cc-hNV" kind="show" id="pgP-Tn-JFR"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XTX-gb-u62">
+                                <rect key="frame" x="0.0" y="45" width="320" height="442"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Busca y selecciona tu asesor" id="T3H-yR-B3p">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="8wJ-gj-ZgD" id="QoR-QF-ew2"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" id="hkX-LG-gPe">
+                                        <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hkX-LG-gPe" id="nrT-jR-6Tf">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8wJ-gj-ZgD" id="3tx-za-jFB"/>
+                                    <outlet property="delegate" destination="8wJ-gj-ZgD" id="k9P-fe-P9R"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="XTX-gb-u62" firstAttribute="top" secondItem="9AS-xK-WFY" secondAttribute="bottom" constant="25" id="8U7-Aq-sNG"/>
                             <constraint firstItem="h2l-Mo-WNH" firstAttribute="leading" secondItem="R7y-Ct-Uc2" secondAttribute="leadingMargin" constant="4" id="JAs-Zx-YCk"/>
                             <constraint firstItem="ih7-4k-KoP" firstAttribute="top" secondItem="hEF-gL-9Wx" secondAttribute="bottom" constant="20" id="LCf-Bq-FHW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="m6b-he-7Aa" secondAttribute="trailing" constant="20" id="OS1-kE-URt"/>
+                            <constraint firstAttribute="trailing" secondItem="XTX-gb-u62" secondAttribute="trailing" id="WGO-58-7iu"/>
+                            <constraint firstItem="XTX-gb-u62" firstAttribute="leading" secondItem="R7y-Ct-Uc2" secondAttribute="leading" id="YMO-x4-Deg"/>
+                            <constraint firstItem="h2l-Mo-WNH" firstAttribute="top" secondItem="XTX-gb-u62" secondAttribute="bottom" constant="15" id="YcT-C7-yih"/>
                             <constraint firstItem="ih7-4k-KoP" firstAttribute="top" secondItem="h2l-Mo-WNH" secondAttribute="bottom" constant="20" id="a0O-jZ-KbF"/>
-                            <constraint firstItem="m6b-he-7Aa" firstAttribute="centerY" secondItem="R7y-Ct-Uc2" secondAttribute="centerY" id="lf0-Nc-sGH"/>
-                            <constraint firstItem="hEF-gL-9Wx" firstAttribute="top" secondItem="VO4-gL-dGX" secondAttribute="bottom" constant="6" id="mcQ-YC-b4h"/>
-                            <constraint firstItem="m6b-he-7Aa" firstAttribute="leading" secondItem="R7y-Ct-Uc2" secondAttribute="leadingMargin" constant="20" id="oLe-oA-O1q"/>
-                            <constraint firstItem="VO4-gL-dGX" firstAttribute="trailing" secondItem="R7y-Ct-Uc2" secondAttribute="trailingMargin" id="oOe-PC-cKT"/>
-                            <constraint firstItem="VO4-gL-dGX" firstAttribute="top" secondItem="m6b-he-7Aa" secondAttribute="bottom" constant="6" id="pfN-V6-OWa"/>
-                            <constraint firstItem="VO4-gL-dGX" firstAttribute="leading" secondItem="R7y-Ct-Uc2" secondAttribute="leadingMargin" id="re5-1G-bNU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hEF-gL-9Wx" secondAttribute="trailing" constant="3" id="uAx-pF-Dh1"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="asesoresPickerView" destination="VO4-gL-dGX" id="9H5-lQ-3Pb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiU-LC-2mY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644.375" y="-71.83098591549296"/>
+            <point key="canvasLocation" x="2021.25" y="-58.098591549295776"/>
         </scene>
     </scenes>
     <resources>
