@@ -10,13 +10,14 @@ import UIKit
 
 class AsesorViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
-    
+    @IBOutlet weak var mySearchBar: UISearchBar!
+    @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
        
-       
+       var searchResults = [String] ()
 
         
     }
@@ -26,7 +27,11 @@ class AsesorViewController: UIViewController,UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
  
-
+    override func viewWillAppear(_ animated:Bool){
+        super.viewWillAppear(animated)
+        
+        
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     
     {
