@@ -20,7 +20,7 @@ class AsesorViewController: UIViewController, UISearchBarDelegate, UIPickerViewD
     @IBOutlet weak var agenciaLabel: UILabel!
     
     
-    var searchResults = [String]()
+    var searchResults = [["Nombre": "Cargando asesores", "Apellidos": " de la agencia", "Id": "656", "Tel":"656", "Email":"email"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,12 +97,14 @@ class AsesorViewController: UIViewController, UISearchBarDelegate, UIPickerViewD
                         
                         if let friends  = parseJSON["friends"] as? [AnyObject]
                         {
+                            let primerName = ["Nombre": "Selecciona un asesor" ,"Apellidos": " ", "Id": " ", "Tel": " ", "Email": " " ]
+                             self.searchResults.append(primerName)
+                            
                             for friendObj in friends
                             {
-                                let fullName = (friendObj["nombre"] as! String) + " " + (friendObj["apellidos"] as! String)
+                                let fullName = ["Nombre": friendObj["nombre"] as! String, "Apellidos": friendObj["apellidos"] as! String, "Id": friendObj["id"] as! String, "Tel": friendObj["tel"] as! String, "Email": friendObj["email"] as! String]
                                 
                                 self.searchResults.append(fullName)
-                          
                                 
                             }
                             
@@ -154,18 +156,23 @@ class AsesorViewController: UIViewController, UISearchBarDelegate, UIPickerViewD
     }
     //MARK: Delegates
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return searchResults[row]
+        return searchResults[row]["Nombre"]! + " " + searchResults[row]["Apellidos"]!
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print (searchResults[row])
+        print (searchResults[row]["Id"]!)
+        let prefs = UserDefaults.standard
+        prefs.setValue(searchResults[row]["Id"], forKey: "miAsesorId")
+        prefs.setValue(searchResults[row]["Nombre"]! + " " + searchResults[row]["Apellidos"]!, forKey: "miAsesor")
+        prefs.setValue(searchResults[row]["Tel"], forKey: "miAsesorTel")
+        prefs.setValue(searchResults[row]["Email"], forKey: "miAsesorEmail")
         
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = searchResults[row]
+        let titleData =  searchResults[row]["Nombre"]! + " " + searchResults[row]["Apellidos"]!
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
         return myTitle
     }
