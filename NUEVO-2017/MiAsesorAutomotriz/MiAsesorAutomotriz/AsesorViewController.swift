@@ -102,6 +102,8 @@ class AsesorViewController: UIViewController, UISearchBarDelegate, UIPickerViewD
                                 let fullName = (friendObj["nombre"] as! String) + " " + (friendObj["apellidos"] as! String)
                                 
                                 self.searchResults.append(fullName)
+                          
+                                
                             }
                             
                         
