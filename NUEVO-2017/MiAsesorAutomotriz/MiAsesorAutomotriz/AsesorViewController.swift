@@ -63,8 +63,14 @@ class AsesorViewController: UIViewController, UISearchBarDelegate, UIPickerViewD
         let request = NSMutableURLRequest(url:myUrl!);
         request.httpMethod = "POST";
         
-        let postString = "searchWord=\(searchWord)";
+        if let x = UserDefaults.standard.object(forKey:"miCodigoAgencia") as? String
+        {
+            print (x)
+        }
         
+        
+        let postString = "searchWord=\(UserDefaults.standard.object(forKey:"miCodigoAgencia"))";
+        print (postString)
         request.httpBody = postString.data(using: String.Encoding.utf8);
         
         // Execute HTTP Request

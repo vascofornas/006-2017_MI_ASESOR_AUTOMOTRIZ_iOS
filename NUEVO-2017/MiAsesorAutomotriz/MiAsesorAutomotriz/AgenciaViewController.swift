@@ -80,11 +80,11 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                     
                     if let parseJSON = json {
                         
-                        let codigo_de_agencia = parseJSON["direccion_agencia"] as! String?
+                        let codigo_de_agencia = parseJSON["codigo_agencia"] as! String?
                         
                         if (codigo_de_agencia != nil){
                             //pasamos los datos NSUserDefaults
-                            print (codigo_de_agencia!)
+                        
                             
                             let nombre_de_agencia = parseJSON["nombre_agencia"] as! String?
                             let direccion_de_agencia = parseJSON["direccion_agencia"] as! String?
