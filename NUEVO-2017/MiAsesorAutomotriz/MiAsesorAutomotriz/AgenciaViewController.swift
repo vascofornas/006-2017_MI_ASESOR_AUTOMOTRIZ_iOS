@@ -100,6 +100,7 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                             
                             self.nombreAgenciaLabel.text = nombre_de_agencia
                             self.direccionAgenciaLabel.text = direccion_de_agencia
+                            
                         }
                         else{
                             //alert

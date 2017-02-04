@@ -8,12 +8,16 @@
 
 import UIKit
 
-class AsesorViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class AsesorViewController: UIViewController, UISearchBarDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+   
 
-    @IBOutlet weak var mySearchBar: UISearchBar!
-    @IBOutlet weak var myTableView: UITableView!
+
+   
+    
+    @IBOutlet weak var pickerAsesores: UIPickerView!
     
     
+    @IBOutlet weak var agenciaLabel: UILabel!
     
     
     var searchResults = [String]()
@@ -21,6 +25,17 @@ class AsesorViewController: UIViewController,UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+       
+      
+        
+        pickerAsesores.dataSource = self
+        pickerAsesores.delegate = self
+        
+        if let x = UserDefaults.standard.object(forKey:"miAgencia") as? String
+        {
+            agenciaLabel.text = x
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,37 +50,11 @@ class AsesorViewController: UIViewController,UITableViewDataSource, UITableViewD
     }
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return searchResults.count;
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let myCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-        
-        myCell.textLabel?.text = searchResults[indexPath.row]
-        
-        return myCell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        print("Did select is called \(indexPath.row)")
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
-    {
-        print("User typed \(searchBar.text) ")
-        
-        doSearch(searchBar.text!)
-    }
-    
-    
+  
     func doSearch(_ searchWord: String)
     {
         // Dismiss the keyboard
-        mySearchBar.resignFirstResponder()
+   
         
         // Create URL
         let myUrl = URL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/getAsesores.php")
@@ -101,7 +90,7 @@ class AsesorViewController: UIViewController,UITableViewDataSource, UITableViewD
                     
                     // Cleare old search data and reload table
                     self.searchResults.removeAll(keepingCapacity: false)
-                    self.myTableView.reloadData()
+                 
                     
                     // If friends array is not empty, populate searchResults array
                     if let parseJSON = json {
@@ -115,7 +104,8 @@ class AsesorViewController: UIViewController,UITableViewDataSource, UITableViewD
                                 self.searchResults.append(fullName)
                             }
                             
-                            self.myTableView.reloadData()
+                        
+                            self.pickerAsesores.reloadAllComponents()
                             
                         } else if(parseJSON["message"] != nil)
                         {
@@ -153,14 +143,29 @@ class AsesorViewController: UIViewController,UITableViewDataSource, UITableViewD
         self.present(myAlert, animated: true, completion: nil)
     }
     
-    @IBAction func cancelButtonTapped(_ sender: AnyObject) {
-        
-        mySearchBar.text = ""
-        mySearchBar.resignFirstResponder()
-        searchResults.removeAll(keepingCapacity: false)
-        myTableView.reloadData()
-        doSearch("")
+  
+    
+  
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return searchResults.count
+    }
+    //MARK: Delegates
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return searchResults[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print (searchResults[row])
+        
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = searchResults[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
+        return myTitle
+    }
     
 }
