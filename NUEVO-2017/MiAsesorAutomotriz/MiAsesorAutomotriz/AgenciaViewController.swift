@@ -90,14 +90,21 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                             let direccion_de_agencia = parseJSON["direccion_agencia"] as! String?
                             
                              let financiera_de_agencia = parseJSON["financiera"] as! String?
-                   
+                            let auxilio_vial_mex = parseJSON["auxilio_vial_mex"] as! String?
+                            let auxilio_vial_usa = parseJSON["auxilio_vial_usa"] as! String?
+                            
+
                             
                             let prefs = UserDefaults.standard
                             prefs.setValue(codigo_de_agencia, forKey: "miCodigoAgencia")
                              prefs.setValue(nombre_de_agencia, forKey: "miAgencia")
                             prefs.setValue(direccion_de_agencia, forKey: "miDireccionAgencia")
                             prefs.setValue(financiera_de_agencia, forKey: "miFinancieraAgencia")
+                             prefs.setValue(auxilio_vial_mex, forKey: "miAuxilioVialMex")
+                             prefs.setValue(auxilio_vial_usa, forKey: "miAuxilioVialUsa")
                             print ("Financiera:\(financiera_de_agencia)")
+                            print ("AVM:\(auxilio_vial_mex)")
+                            print ("AVUSA:\(auxilio_vial_usa)")
                             
                             
                             self.nombreAgenciaLabel.text = nombre_de_agencia
