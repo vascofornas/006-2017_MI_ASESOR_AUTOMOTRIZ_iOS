@@ -66,7 +66,7 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                    if (error != nil)
                    {
                     //display an alert
-                    var myAlert = UIAlertController(title:"Aviso",message:error?.localizedDescription,
+                    let myAlert = UIAlertController(title:"Aviso",message:error?.localizedDescription,
                                                     preferredStyle:UIAlertControllerStyle.alert);
                     let okAction = UIAlertAction(title:"Cerrar",style:UIAlertActionStyle.default, handler: nil);
                     
@@ -105,7 +105,7 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                         else{
                             //alert
                             let mensaje = parseJSON["message"] as? String
-                            var myAlert = UIAlertController(title:"Aviso",message:mensaje,
+                            let myAlert = UIAlertController(title:"Aviso",message:mensaje,
                                                             preferredStyle:UIAlertControllerStyle.alert);
                             let okAction = UIAlertAction(title:"Cerrar",style:UIAlertActionStyle.default, handler: nil);
                             

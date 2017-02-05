@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		801EF4E21E46A56C00DB5E72 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801EF4E11E46A56C00DB5E72 /* MenuViewController.swift */; };
+		801EF4EA1E46C27100DB5E72 /* MiAutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801EF4E91E46C27100DB5E72 /* MiAutoViewController.swift */; };
+		801EF4EC1E46C28700DB5E72 /* Citas1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801EF4EB1E46C28700DB5E72 /* Citas1ViewController.swift */; };
 		8092A0481E43F13900258268 /* AsesorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092A0471E43F13900258268 /* AsesorViewController.swift */; };
 		809A0A831E36F7EB00B47EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A0A821E36F7EB00B47EAC /* AppDelegate.swift */; };
 		809A0A851E36F7EC00B47EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A0A841E36F7EC00B47EAC /* ViewController.swift */; };
@@ -14,9 +17,16 @@
 		809A0A8A1E36F7EE00B47EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 809A0A891E36F7EE00B47EAC /* Assets.xcassets */; };
 		809A0A8D1E36F7EE00B47EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809A0A8B1E36F7EE00B47EAC /* LaunchScreen.storyboard */; };
 		809A0A991E39888C00B47EAC /* AgenciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A0A981E39888C00B47EAC /* AgenciaViewController.swift */; };
+		80CAF29A1E46C38D00424EFC /* AutosNuevosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF2991E46C38D00424EFC /* AutosNuevosViewController.swift */; };
+		80CAF29C1E46C3A000424EFC /* CostosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF29B1E46C3A000424EFC /* CostosViewController.swift */; };
+		80CAF29E1E46C3B000424EFC /* TramitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF29D1E46C3B000424EFC /* TramitesViewController.swift */; };
+		80CAF2A01E46C3BF00424EFC /* AseguradorasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		801EF4E11E46A56C00DB5E72 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		801EF4E91E46C27100DB5E72 /* MiAutoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiAutoViewController.swift; sourceTree = "<group>"; };
+		801EF4EB1E46C28700DB5E72 /* Citas1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Citas1ViewController.swift; sourceTree = "<group>"; };
 		8092A0471E43F13900258268 /* AsesorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsesorViewController.swift; sourceTree = "<group>"; };
 		809A0A7F1E36F7EA00B47EAC /* MiAsesorAutomotriz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiAsesorAutomotriz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		809A0A821E36F7EB00B47EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +36,10 @@
 		809A0A8C1E36F7EE00B47EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		809A0A8E1E36F7EF00B47EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		809A0A981E39888C00B47EAC /* AgenciaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgenciaViewController.swift; sourceTree = "<group>"; };
+		80CAF2991E46C38D00424EFC /* AutosNuevosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutosNuevosViewController.swift; sourceTree = "<group>"; };
+		80CAF29B1E46C3A000424EFC /* CostosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostosViewController.swift; sourceTree = "<group>"; };
+		80CAF29D1E46C3B000424EFC /* TramitesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TramitesViewController.swift; sourceTree = "<group>"; };
+		80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AseguradorasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +80,13 @@
 				809A0A8E1E36F7EF00B47EAC /* Info.plist */,
 				809A0A981E39888C00B47EAC /* AgenciaViewController.swift */,
 				8092A0471E43F13900258268 /* AsesorViewController.swift */,
+				801EF4E11E46A56C00DB5E72 /* MenuViewController.swift */,
+				801EF4E91E46C27100DB5E72 /* MiAutoViewController.swift */,
+				801EF4EB1E46C28700DB5E72 /* Citas1ViewController.swift */,
+				80CAF2991E46C38D00424EFC /* AutosNuevosViewController.swift */,
+				80CAF29B1E46C3A000424EFC /* CostosViewController.swift */,
+				80CAF29D1E46C3B000424EFC /* TramitesViewController.swift */,
+				80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */,
 			);
 			path = MiAsesorAutomotriz;
 			sourceTree = "<group>";
@@ -143,10 +164,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801EF4EC1E46C28700DB5E72 /* Citas1ViewController.swift in Sources */,
 				809A0A851E36F7EC00B47EAC /* ViewController.swift in Sources */,
+				801EF4EA1E46C27100DB5E72 /* MiAutoViewController.swift in Sources */,
+				801EF4E21E46A56C00DB5E72 /* MenuViewController.swift in Sources */,
 				8092A0481E43F13900258268 /* AsesorViewController.swift in Sources */,
+				80CAF29A1E46C38D00424EFC /* AutosNuevosViewController.swift in Sources */,
+				80CAF29C1E46C3A000424EFC /* CostosViewController.swift in Sources */,
+				80CAF29E1E46C3B000424EFC /* TramitesViewController.swift in Sources */,
 				809A0A831E36F7EB00B47EAC /* AppDelegate.swift in Sources */,
 				809A0A991E39888C00B47EAC /* AgenciaViewController.swift in Sources */,
+				80CAF2A01E46C3BF00424EFC /* AseguradorasViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
