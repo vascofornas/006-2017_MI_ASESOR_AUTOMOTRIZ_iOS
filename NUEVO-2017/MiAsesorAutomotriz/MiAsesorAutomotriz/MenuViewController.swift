@@ -14,7 +14,14 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let x = UserDefaults.standard.object(forKey:"miAsesor") as? String
+        {
+            asesorLabel.text = x
+        }
+        else
+        {
+            asesorLabel.text = "No has seleccionado ningún Asesor"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,31 +30,76 @@ class MenuViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   //botones de la barra inferior
     @IBAction func llamarButton(_ sender: Any) {
+        
+        if let y = UserDefaults.standard.object(forKey:"miAsesor") as? String
+        {
+        
+        let refreshAlert = UIAlertController(title: "Aviso", message: "Quieres marcar a tu asesor "+y+"?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action: UIAlertAction!) in
+            
+            if let x = UserDefaults.standard.object(forKey:"miAsesorTel") as? String
+            {
+                
+                print("Handle Ok logic here")
+                if let url = URL(string: "tel://\(x)") {
+                    UIApplication.shared.open(url, options: [:])
+                }
+            }
+            
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+        
     }
     
-    
-    @IBAction func emailButton(_ sender: Any) {
+        
     }
-    
-    @IBAction func financieraButton(_ sender: Any) {
-    }
-    
     @IBAction func smsButton(_ sender: Any) {
     }
     
     
     @IBAction func compartirButton(_ sender: Any) {
+    }
+    
+    @IBAction func emailButton(_ sender: Any) {
+    }
+    
+    
+    //botones del menu
+    @IBAction func financieraButton(_ sender: Any) {
+        
+        if (UserDefaults.standard.object(forKey:"miAsesor") as? String) != nil
+        {
+            
+            let refreshAlert = UIAlertController(title: "Aviso", message: "Quieres marcar a la Financiera?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action: UIAlertAction!) in
+                
+                if let x = UserDefaults.standard.object(forKey:"miFinancieraAgencia") as? String
+                {
+                    
+                    print("Handle Ok logic here")
+                    if let url = URL(string: "tel://\(x)") {
+                        UIApplication.shared.open(url, options: [:])
+                    }
+                }
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Handle Cancel Logic here")
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+    }
+    
     }
     
     
