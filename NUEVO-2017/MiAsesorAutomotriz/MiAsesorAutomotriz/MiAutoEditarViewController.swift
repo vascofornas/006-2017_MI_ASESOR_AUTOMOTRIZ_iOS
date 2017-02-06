@@ -1,24 +1,20 @@
 //
-//  MiAutoViewController.swift
+//  MiAutoEditarViewController.swift
 //  MiAsesorAutomotriz
 //
-//  Created by MODESTO VASCO FORNAS on 2/4/17.
+//  Created by MODESTO VASCO FORNAS on 2/5/17.
 //  Copyright © 2017 Modesto Vasco. All rights reserved.
 //
 
 import UIKit
 
-class MiAutoViewController: UIViewController {
+class MiAutoEditarViewController: UIViewController {
 
-    @IBOutlet weak var modeloLabel: UILabel!
-    @IBOutlet weak var anolabel: UILabel!
-    @IBOutlet weak var placasLabel: UILabel!
-    @IBOutlet weak var polizaLabel: UILabel!
-    
-    @IBOutlet weak var serieLabel: UIImageView!
-    
-    
-    
+    @IBOutlet weak var serieTxt: UITextField!
+    @IBOutlet weak var polizaTxt: UITextField!
+    @IBOutlet weak var placasTxt: UITextField!
+    @IBOutlet weak var anoTxt: UITextField!
+    @IBOutlet weak var modeloTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,14 +26,6 @@ class MiAutoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func compartirButton(_ sender: Any) {
-    }
-    @IBAction func smsButton(_ sender: Any) {
-    }
-    @IBAction func emailButton(_ sender: Any) {
-    }
-    @IBAction func llamarButton(_ sender: Any) {
-    }
 
     /*
     // MARK: - Navigation
@@ -48,5 +36,14 @@ class MiAutoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func aceptarButton(_ sender: Any) {
+    }
+    @IBAction func compartirButton(_ sender: Any) {
+    }
+    @IBAction func smsButton(_ sender: Any) {
+    }
+    @IBAction func emailButton(_ sender: Any) {
+    }
+    @IBAction func llamarButton(_ sender: Any) {
+    }
 }

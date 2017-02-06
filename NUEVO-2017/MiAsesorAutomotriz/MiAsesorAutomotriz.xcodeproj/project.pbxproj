@@ -21,6 +21,7 @@
 		80CAF29C1E46C3A000424EFC /* CostosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF29B1E46C3A000424EFC /* CostosViewController.swift */; };
 		80CAF29E1E46C3B000424EFC /* TramitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF29D1E46C3B000424EFC /* TramitesViewController.swift */; };
 		80CAF2A01E46C3BF00424EFC /* AseguradorasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */; };
+		80CAF2A21E4819F200424EFC /* MiAutoEditarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF2A11E4819F200424EFC /* MiAutoEditarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		80CAF29B1E46C3A000424EFC /* CostosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostosViewController.swift; sourceTree = "<group>"; };
 		80CAF29D1E46C3B000424EFC /* TramitesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TramitesViewController.swift; sourceTree = "<group>"; };
 		80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AseguradorasViewController.swift; sourceTree = "<group>"; };
+		80CAF2A11E4819F200424EFC /* MiAutoEditarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiAutoEditarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				80CAF29B1E46C3A000424EFC /* CostosViewController.swift */,
 				80CAF29D1E46C3B000424EFC /* TramitesViewController.swift */,
 				80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */,
+				80CAF2A11E4819F200424EFC /* MiAutoEditarViewController.swift */,
 			);
 			path = MiAsesorAutomotriz;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				80CAF29A1E46C38D00424EFC /* AutosNuevosViewController.swift in Sources */,
 				80CAF29C1E46C3A000424EFC /* CostosViewController.swift in Sources */,
 				80CAF29E1E46C3B000424EFC /* TramitesViewController.swift in Sources */,
+				80CAF2A21E4819F200424EFC /* MiAutoEditarViewController.swift in Sources */,
 				809A0A831E36F7EB00B47EAC /* AppDelegate.swift in Sources */,
 				809A0A991E39888C00B47EAC /* AgenciaViewController.swift in Sources */,
 				80CAF2A01E46C3BF00424EFC /* AseguradorasViewController.swift in Sources */,
