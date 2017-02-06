@@ -84,12 +84,12 @@
 				8092A0471E43F13900258268 /* AsesorViewController.swift */,
 				801EF4E11E46A56C00DB5E72 /* MenuViewController.swift */,
 				801EF4E91E46C27100DB5E72 /* MiAutoViewController.swift */,
+				80CAF2A11E4819F200424EFC /* MiAutoEditarViewController.swift */,
 				801EF4EB1E46C28700DB5E72 /* Citas1ViewController.swift */,
 				80CAF2991E46C38D00424EFC /* AutosNuevosViewController.swift */,
 				80CAF29B1E46C3A000424EFC /* CostosViewController.swift */,
 				80CAF29D1E46C3B000424EFC /* TramitesViewController.swift */,
 				80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */,
-				80CAF2A11E4819F200424EFC /* MiAutoEditarViewController.swift */,
 			);
 			path = MiAsesorAutomotriz;
 			sourceTree = "<group>";
