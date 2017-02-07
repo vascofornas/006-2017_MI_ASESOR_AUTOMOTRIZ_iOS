@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -882,10 +882,10 @@
             </objects>
             <point key="canvasLocation" x="3656.25" y="-3160.5633802816901"/>
         </scene>
-        <!--View Controller-->
+        <!--Citas1 View Controller-->
         <scene sceneID="yOb-iz-cOP">
             <objects>
-                <viewController id="Ge5-mt-Y75" sceneMemberID="viewController">
+                <viewController id="Ge5-mt-Y75" customClass="Citas1ViewController" customModule="MiAsesorAutomotriz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yKY-Je-Uh7"/>
                         <viewControllerLayoutGuide type="bottom" id="30N-XW-yCQ"/>
@@ -906,17 +906,64 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UYj-LL-Joy"/>
-                                    <barButtonItem image="llamar" id="zFF-lt-tTz"/>
+                                    <barButtonItem image="llamar" id="zFF-lt-tTz">
+                                        <connections>
+                                            <action selector="llamarButton:" destination="Ge5-mt-Y75" id="FBG-Yk-uOR"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Rwe-Y7-1xy"/>
-                                    <barButtonItem image="email" id="hMr-Ob-KzQ"/>
+                                    <barButtonItem image="email" id="hMr-Ob-KzQ">
+                                        <connections>
+                                            <action selector="emailButton:" destination="Ge5-mt-Y75" id="0na-I5-abZ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="W3x-br-ESY"/>
-                                    <barButtonItem image="sms" id="qnu-gv-cBx"/>
+                                    <barButtonItem image="sms" id="qnu-gv-cBx">
+                                        <connections>
+                                            <action selector="smsButton:" destination="Ge5-mt-Y75" id="Tux-W4-gLa"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4xt-MJ-5Hi"/>
-                                    <barButtonItem image="compartir" id="S7Y-Fr-3ew"/>
+                                    <barButtonItem image="compartir" id="S7Y-Fr-3ew">
+                                        <connections>
+                                            <action selector="compartirButton:" destination="Ge5-mt-Y75" id="4hh-M9-joF"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Yg3-s2-KtZ"/>
                                 </items>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tu nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BYW-2u-B5E">
+                                <rect key="frame" x="39" y="316" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tu email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5b1-Os-4MM">
+                                <rect key="frame" x="39" y="360" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tu telefono" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="toR-25-fhZ">
+                                <rect key="frame" x="39" y="407" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fe-um-HK0">
+                                <rect key="frame" x="201" y="407" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Aceptar"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akx-DM-2KS">
+                                <rect key="frame" x="155" y="454" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancelar"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -929,10 +976,15 @@
                             <constraint firstItem="2ml-fC-zLg" firstAttribute="leading" secondItem="DAU-QU-zfP" secondAttribute="leading" id="u1X-MB-ZLt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTxt" destination="5b1-Os-4MM" id="O6I-vr-DAs"/>
+                        <outlet property="nombreTxt" destination="BYW-2u-B5E" id="NB2-n1-d9W"/>
+                        <outlet property="telTxt" destination="toR-25-fhZ" id="fdB-bM-53e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypu-wG-fM1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3343" y="-1896"/>
+            <point key="canvasLocation" x="3341.25" y="-1896.1267605633802"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rwQ-vw-Udn">
@@ -1317,8 +1369,8 @@
         <image name="tramites" width="341" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wnI-NS-jWH"/>
-        <segue reference="UEE-Ln-YSq"/>
+        <segue reference="ZPR-30-viG"/>
         <segue reference="pgP-Tn-JFR"/>
+        <segue reference="UEE-Ln-YSq"/>
     </inferredMetricsTieBreakers>
 </document>
