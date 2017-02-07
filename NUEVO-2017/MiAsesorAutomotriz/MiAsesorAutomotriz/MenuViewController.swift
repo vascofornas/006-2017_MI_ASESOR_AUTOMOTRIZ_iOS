@@ -9,9 +9,14 @@
 import UIKit
 import MessageUI
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController,MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate {
 
     @IBOutlet weak var asesorLabel: UILabel!
+    
+    var emailAsesor = String()
+    var telAsesor = String()
+    var appStoreAgencia = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +28,21 @@ class MenuViewController: UIViewController {
         {
             asesorLabel.text = "No has seleccionado ningún Asesor"
         }
+        
+        if let y = UserDefaults.standard.object(forKey:"miAsesorEmail") as? String
+        {
+            emailAsesor = y
+        }
+        if let tel = UserDefaults.standard.object(forKey:"miAsesorTel") as? String
+        {
+            telAsesor = tel
+        }
+        if let appStore = UserDefaults.standard.object(forKey:"miAppStoreAgencia") as? String
+        {
+            appStoreAgencia = appStore
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,18 +83,72 @@ class MenuViewController: UIViewController {
         
     }
     @IBAction func smsButton(_ sender: Any) {
+        
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = "SMS desde la App Mi Asesor Automotriz"
+            controller.recipients = [telAsesor]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     
+    
     @IBAction func compartirButton(_ sender: Any) {
+        
+
+        
+        if MFMailComposeViewController.canSendMail() {
+            
+            
+            let composeVC = MFMailComposeViewController()
+            composeVC.mailComposeDelegate = self
+            // Configure the fields of the interface.
+            
+            let url_app = "<a href='\(appStoreAgencia)'>Te recomiendo que descargues la iOS App MI ASESOR AUTOMOTRIZ (pulsa aqui)</a>"
+            composeVC.setSubject("iOS App Mi Asesor Automotriz")
+            composeVC.setMessageBody(url_app , isHTML: true)
+            // Present the view controller modally.
+            self.present(composeVC, animated: true, completion: nil)
+        } else {
+            // show failure alert
+        }
     }
     
     @IBAction func emailButton(_ sender: Any) {
         
         
+       
+        
+        if MFMailComposeViewController.canSendMail() {
+            
+            
+            let composeVC = MFMailComposeViewController()
+            composeVC.mailComposeDelegate = self
+            // Configure the fields of the interface.
+            composeVC.setToRecipients([emailAsesor])
+            composeVC.setSubject("Email desde la app Mi Asesor Automotriz")
+            composeVC.setMessageBody("Escribe aqui el texto de tu email!", isHTML: false)
+            // Present the view controller modally.
+            self.present(composeVC, animated: true, completion: nil)
+        } else {
+            // show failure alert
+        }
+        
         
          }
    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
+    
     
     //botones del menu
     @IBAction func financieraButton(_ sender: Any) {

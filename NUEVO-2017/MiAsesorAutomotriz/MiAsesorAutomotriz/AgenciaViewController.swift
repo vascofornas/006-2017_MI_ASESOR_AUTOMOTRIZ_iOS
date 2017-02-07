@@ -13,6 +13,12 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var direccionAgenciaLabel: UILabel!
     @IBOutlet weak var nombreAgenciaLabel: UILabel!
     @IBOutlet weak var codigoTextField: UITextField!
+    
+    
+ 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -92,6 +98,7 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                              let financiera_de_agencia = parseJSON["financiera"] as! String?
                             let auxilio_vial_mex = parseJSON["auxilio_vial_mex"] as! String?
                             let auxilio_vial_usa = parseJSON["auxilio_vial_usa"] as! String?
+                            let app_store_agencia = parseJSON["app_store_agencia"] as! String?
                             
 
                             
@@ -102,6 +109,7 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                             prefs.setValue(financiera_de_agencia, forKey: "miFinancieraAgencia")
                              prefs.setValue(auxilio_vial_mex, forKey: "miAuxilioVialMex")
                              prefs.setValue(auxilio_vial_usa, forKey: "miAuxilioVialUsa")
+                            prefs.setValue(app_store_agencia, forKey: "miAppStoreAgencia")
                             print ("Financiera:\(financiera_de_agencia)")
                             print ("AVM:\(auxilio_vial_mex)")
                             print ("AVUSA:\(auxilio_vial_usa)")
