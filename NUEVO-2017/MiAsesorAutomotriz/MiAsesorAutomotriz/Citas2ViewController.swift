@@ -1,61 +1,44 @@
 //
-//  Citas1ViewController.swift
+//  Citas2ViewController.swift
 //  MiAsesorAutomotriz
 //
-//  Created by MODESTO VASCO FORNAS on 2/4/17.
+//  Created by MODESTO VASCO FORNAS on 2/7/17.
 //  Copyright © 2017 Modesto Vasco. All rights reserved.
 //
 
 import UIKit
 import MessageUI
 
-class Citas1ViewController: UIViewController, UITextFieldDelegate,MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate {
+class Citas2ViewController: UIViewController, UITextFieldDelegate,MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate {
     
-    @IBOutlet weak var nombreTxt: UITextField!
-    @IBOutlet weak var emailTxt: UITextField!
-    @IBOutlet weak var telTxt: UITextField!
+
+    @IBOutlet weak var fechaLabel: UILabel!
     
+    @IBOutlet weak var datePicker: UIDatePicker!
     var emailAsesor = String()
     var telAsesor = String()
     var appStoreAgencia = String()
+    var fecha = String()
+    var hora = String()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.nombreTxt.delegate = self
-        self.emailTxt.delegate = self
-        self.telTxt.delegate = self
         
-        if let x = UserDefaults.standard.object(forKey:"miNombre") as? String
-        {
-            nombreTxt.text = x
-        }
-        else
-        {
-            
-        }
+      
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/YYYY"
+        fecha = formatter.string(from: datePicker.date)
+        formatter.dateFormat = "hh:mm"
+        hora = formatter.string(from: datePicker.date)
+        fechaLabel.text = fecha + " " +  hora
+   
         
-        if let y = UserDefaults.standard.object(forKey:"miEmail") as? String
-        {
-            emailTxt.text = y
-           
-        }
-        else
-        {
-            
-        }
-        if let z = UserDefaults.standard.object(forKey:"miTel") as? String
-        {
-            telTxt.text = z
-        }
-        else
-        {
-            
-            
-        }
-        
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+      
+       
+       
         
         if let hh = UserDefaults.standard.object(forKey:"miAsesorEmail") as? String
         {
@@ -69,7 +52,7 @@ class Citas1ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
         {
             appStoreAgencia = appStore
         }
-
+        
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
@@ -81,62 +64,28 @@ class Citas1ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-          }
+    }
     
     @IBAction func aceptarButton(_ sender: Any) {
         
-        
-        
-        let minombre = nombreTxt.text
-        let miemail = emailTxt.text
-        let mitel = telTxt.text
-        
-        if (minombre?.isEmpty)!
-        {
-            //
-            let myAlert = UIAlertController(title:"Aviso", message:"Debes introducir tu nombre", preferredStyle:
-                UIAlertControllerStyle.alert);
-            let okAction = UIAlertAction(title:"Cerrar", style:
-                UIAlertActionStyle.default, handler:nil)
-            myAlert.addAction(okAction);
-            self.present(myAlert, animated: true, completion: nil)
-            
-            
-            return
-        }
-        if (miemail?.isEmpty)!
-        {
-            //
-            let myAlert = UIAlertController(title:"Aviso", message:"Debes introducir tu email", preferredStyle:
-                UIAlertControllerStyle.alert);
-            let okAction = UIAlertAction(title:"Cerrar", style:
-                UIAlertActionStyle.default, handler:nil)
-            myAlert.addAction(okAction);
-            self.present(myAlert, animated: true, completion: nil)
-            
-            
-            return
-        }
-        if (mitel?.isEmpty)!
-        {
-            //
-            let myAlert = UIAlertController(title:"Aviso", message:"Debes introducir tu número de teléfono", preferredStyle:
-                UIAlertControllerStyle.alert);
-            let okAction = UIAlertAction(title:"Cerrar", style:
-                UIAlertActionStyle.default, handler:nil)
-            myAlert.addAction(okAction);
-            self.present(myAlert, animated: true, completion: nil)
-            
-            
-            return
-        }
-        
-        
-        let prefs = UserDefaults.standard
-        prefs.setValue(minombre, forKey: "miNombre")
-        prefs.setValue(miemail, forKey: "miEmail")
-        prefs.setValue(mitel, forKey: "miTel")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/YYYY"
+        fecha = formatter.string(from: datePicker.date)
+        formatter.dateFormat = "hh:mm"
+        hora = formatter.string(from: datePicker.date)
+        fechaLabel.text = fecha + " " +  hora
      
+        let prefs = UserDefaults.standard
+        prefs.setValue(fecha, forKey: "miFecha")
+        prefs.setValue(hora, forKey: "miHora")
+        
+        print (fecha)
+        print (hora)
+        
+        
+        
+      
+        
     }
     @IBAction func llamarButton(_ sender: Any) {
         if let y = UserDefaults.standard.object(forKey:"miAsesor") as? String
@@ -223,4 +172,17 @@ class Citas1ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
-    }}
+    }
+
+    @IBAction func cambioFecha(_ sender: Any) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/YYYY"
+        fecha = formatter.string(from: datePicker.date)
+        formatter.dateFormat = "hh:mm"
+        hora = formatter.string(from: datePicker.date)
+        fechaLabel.text = fecha + " " + hora
+        
+    }
+
+}
