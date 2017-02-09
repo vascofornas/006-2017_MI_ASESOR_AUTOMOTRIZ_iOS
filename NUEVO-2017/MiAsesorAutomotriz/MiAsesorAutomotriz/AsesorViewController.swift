@@ -94,6 +94,8 @@ class AsesorViewController: UIViewController, UISearchBarDelegate, UIPickerViewD
                     // Convert data returned from server to NSDictionary
                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
                     
+     
+                    
                     // Cleare old search data and reload table
                     self.searchResults.removeAll(keepingCapacity: false)
                  
