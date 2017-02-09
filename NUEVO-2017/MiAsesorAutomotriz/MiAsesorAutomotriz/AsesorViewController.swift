@@ -63,15 +63,13 @@ class AsesorViewController: UIViewController, UISearchBarDelegate, UIPickerViewD
         let request = NSMutableURLRequest(url:myUrl!);
         request.httpMethod = "POST";
         
-        if let x = UserDefaults.standard.object(forKey:"miCodigoAgencia") as? String
-        {
+        if let x = UserDefaults.standard.object(forKey:"miCodigoAgencia") as? String {
             print (x)
+            var postString = "searchWord=\(x)".addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed);
+            print (postString)
+            request.httpBody = postString?.data(using: String.Encoding.utf8)
+            request.setValue("\(request.httpBody?.count)", forHTTPHeaderField:"Content-Length")
         }
-        
-        
-        let postString = "searchWord=\(UserDefaults.standard.object(forKey:"miCodigoAgencia"))";
-        print (postString)
-        request.httpBody = postString.data(using: String.Encoding.utf8);
         
         // Execute HTTP Request
         URLSession.shared.dataTask(with: request as URLRequest,

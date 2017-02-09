@@ -41,6 +41,10 @@ class MenuViewController: UIViewController,MFMailComposeViewControllerDelegate,M
         {
             appStoreAgencia = appStore
         }
+        if let autosNuevos = UserDefaults.standard.object(forKey:"miAutosNuevosAgencia") as? String
+        {
+            print (autosNuevos)
+        }
         
         
     }

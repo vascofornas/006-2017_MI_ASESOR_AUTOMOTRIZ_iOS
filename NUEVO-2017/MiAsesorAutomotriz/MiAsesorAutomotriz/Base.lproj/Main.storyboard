@@ -647,7 +647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aW-PI-CGd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3870" y="-2024"/>
+            <point key="canvasLocation" x="3038" y="-1619"/>
         </scene>
         <!--Mi Auto View Controller-->
         <scene sceneID="jpK-ji-M0q">
@@ -1031,10 +1031,10 @@
             </objects>
             <point key="canvasLocation" x="3313" y="-1896"/>
         </scene>
-        <!--View Controller-->
+        <!--Autos Nuevos View Controller-->
         <scene sceneID="rwQ-vw-Udn">
             <objects>
-                <viewController id="bpB-rj-owX" sceneMemberID="viewController">
+                <viewController id="bpB-rj-owX" customClass="AutosNuevosViewController" customModule="MiAsesorAutomotriz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xse-fv-pKk"/>
                         <viewControllerLayoutGuide type="bottom" id="yF7-3q-PxB"/>
@@ -1051,37 +1051,64 @@
                                 <items>
                                     <barButtonItem image="home" id="CXL-7L-dz5">
                                         <connections>
-                                            <segue destination="cS0-oT-8TE" kind="presentation" id="Oje-bZ-1oT"/>
+                                            <segue destination="cS0-oT-8TE" kind="presentation" id="d4b-tp-mXl"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="D79-A5-61d"/>
-                                    <barButtonItem image="llamar" id="j9I-XH-k8i"/>
+                                    <barButtonItem image="llamar" id="j9I-XH-k8i">
+                                        <connections>
+                                            <action selector="llamarButton:" destination="bpB-rj-owX" id="Owe-kS-o0s"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="p3f-Eq-ZmG"/>
-                                    <barButtonItem image="email" id="NXp-Lo-Qc4"/>
+                                    <barButtonItem image="email" id="NXp-Lo-Qc4">
+                                        <connections>
+                                            <action selector="emailButton:" destination="bpB-rj-owX" id="Nml-SS-b1M"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="yOL-4P-XSM"/>
-                                    <barButtonItem image="sms" id="hil-Dq-Fgp"/>
+                                    <barButtonItem image="sms" id="hil-Dq-Fgp">
+                                        <connections>
+                                            <action selector="smsButton:" destination="bpB-rj-owX" id="VAC-Gy-lUg"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ZwR-D7-rvJ"/>
-                                    <barButtonItem image="compartir" id="FIv-Nx-a5Y"/>
+                                    <barButtonItem image="compartir" id="FIv-Nx-a5Y">
+                                        <connections>
+                                            <action selector="compartirButton:" destination="bpB-rj-owX" id="X9V-bl-UMT"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KNX-zb-5Nn"/>
                                 </items>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCA-7u-6xN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="BCA-7u-6xN" firstAttribute="top" secondItem="HEk-sk-snJ" secondAttribute="top" id="0Cm-Ya-SZM"/>
+                            <constraint firstAttribute="trailing" secondItem="BCA-7u-6xN" secondAttribute="trailing" id="BNP-4A-CLx"/>
                             <constraint firstAttribute="bottom" secondItem="hSX-hp-CDk" secondAttribute="bottom" id="FCO-eU-QER"/>
                             <constraint firstItem="yF7-3q-PxB" firstAttribute="top" secondItem="aII-fC-DPa" secondAttribute="bottom" id="G6U-Ue-mt1"/>
                             <constraint firstAttribute="trailing" secondItem="aII-fC-DPa" secondAttribute="trailing" id="HcM-Lm-uxC"/>
                             <constraint firstItem="aII-fC-DPa" firstAttribute="leading" secondItem="HEk-sk-snJ" secondAttribute="leading" id="Kca-ot-1kP"/>
+                            <constraint firstItem="BCA-7u-6xN" firstAttribute="leading" secondItem="HEk-sk-snJ" secondAttribute="leading" id="YzX-5i-U8z"/>
                             <constraint firstItem="hSX-hp-CDk" firstAttribute="leading" secondItem="HEk-sk-snJ" secondAttribute="leading" id="d91-DI-36U"/>
                             <constraint firstAttribute="trailing" secondItem="hSX-hp-CDk" secondAttribute="trailing" id="kL2-S7-tq2"/>
+                            <constraint firstItem="aII-fC-DPa" firstAttribute="top" secondItem="BCA-7u-6xN" secondAttribute="bottom" id="nuL-nZ-jSP"/>
                             <constraint firstItem="hSX-hp-CDk" firstAttribute="top" secondItem="HEk-sk-snJ" secondAttribute="top" id="v62-BK-lNi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="BCA-7u-6xN" id="9Ia-xc-Luh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TY-ts-vCy" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3342" y="-1194"/>
+            <point key="canvasLocation" x="3341.25" y="-1194.7183098591549"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UlD-uJ-HtM">
@@ -2266,7 +2293,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uau-bg-omA"/>
-        <segue reference="bcS-rd-qTP"/>
+        <segue reference="d4b-tp-mXl"/>
         <segue reference="pgP-Tn-JFR"/>
     </inferredMetricsTieBreakers>
 </document>
