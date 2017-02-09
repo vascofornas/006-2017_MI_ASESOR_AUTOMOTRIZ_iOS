@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1648,6 +1648,7 @@
                                 </state>
                                 <connections>
                                     <action selector="aceptarButton:" destination="mbx-Sc-yiv" eventType="touchUpInside" id="YzD-76-iW0"/>
+                                    <segue destination="2Xg-06-PvP" kind="presentation" id="nZa-SO-N5y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFM-Lk-mst">
@@ -1725,6 +1726,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="j4K-Ft-g2J">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xle-OB-vZB">
+                                <rect key="frame" x="0.0" y="332" width="320" height="126"/>
+                            </pickerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jj-el-IDP">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
@@ -1757,36 +1761,14 @@
                                 </items>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tu nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q9i-Je-nOW">
-                                <rect key="frame" x="16" y="335" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tu email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xrq-tK-cc6">
-                                <rect key="frame" x="16" y="373" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tu telefono" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rde-2v-DTp">
-                                <rect key="frame" x="16" y="411" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITA A SERVICIO (4/7)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hla-ly-v7A">
                                 <rect key="frame" x="16" y="274" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Año del auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaT-iB-wN4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Año del auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaT-iB-wN4">
                                 <rect key="frame" x="16" y="294" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1804,6 +1786,7 @@
                                 </state>
                                 <connections>
                                     <action selector="aceptarButton:" destination="2Xg-06-PvP" eventType="touchUpInside" id="7st-iB-34C"/>
+                                    <segue destination="RvJ-ag-PB2" kind="presentation" id="pcG-ou-sbl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfL-41-LfU">
@@ -1823,6 +1806,7 @@
                         <constraints>
                             <constraint firstItem="e0J-bb-8fN" firstAttribute="trailing" secondItem="DxN-2W-PcT" secondAttribute="trailingMargin" id="0Qx-mM-hxU"/>
                             <constraint firstItem="j4K-Ft-g2J" firstAttribute="top" secondItem="DxN-2W-PcT" secondAttribute="top" id="1ze-Uu-JD4"/>
+                            <constraint firstItem="LfL-41-LfU" firstAttribute="top" secondItem="Xle-OB-vZB" secondAttribute="bottom" constant="20" id="39z-1k-10o"/>
                             <constraint firstItem="LfL-41-LfU" firstAttribute="leading" secondItem="DxN-2W-PcT" secondAttribute="leadingMargin" id="5zF-NY-39n"/>
                             <constraint firstItem="5Jj-el-IDP" firstAttribute="top" secondItem="e0J-bb-8fN" secondAttribute="bottom" id="6BX-Gt-EER"/>
                             <constraint firstItem="Hla-ly-v7A" firstAttribute="top" secondItem="j4K-Ft-g2J" secondAttribute="bottom" constant="-294" id="A0O-cz-psC"/>
@@ -1831,7 +1815,10 @@
                             <constraint firstItem="5Jj-el-IDP" firstAttribute="top" secondItem="LfL-41-LfU" secondAttribute="bottom" id="IVS-by-4C4"/>
                             <constraint firstItem="Hla-ly-v7A" firstAttribute="centerX" secondItem="DxN-2W-PcT" secondAttribute="centerX" id="KdK-NZ-xoh"/>
                             <constraint firstItem="Hla-ly-v7A" firstAttribute="trailing" secondItem="DxN-2W-PcT" secondAttribute="trailingMargin" id="Mvt-Tf-8uS"/>
+                            <constraint firstItem="Xle-OB-vZB" firstAttribute="top" secondItem="XaT-iB-wN4" secondAttribute="bottom" constant="17" id="RYD-gP-erQ"/>
                             <constraint firstItem="Hla-ly-v7A" firstAttribute="centerY" secondItem="DxN-2W-PcT" secondAttribute="centerY" id="XRw-tc-IVl"/>
+                            <constraint firstItem="Xle-OB-vZB" firstAttribute="leading" secondItem="DxN-2W-PcT" secondAttribute="leading" id="aVf-3X-3cy"/>
+                            <constraint firstAttribute="trailing" secondItem="Xle-OB-vZB" secondAttribute="trailing" id="bLf-lU-lHL"/>
                             <constraint firstAttribute="bottom" secondItem="j4K-Ft-g2J" secondAttribute="bottom" id="eLQ-nd-Wbz"/>
                             <constraint firstAttribute="trailing" secondItem="j4K-Ft-g2J" secondAttribute="trailing" id="g9Z-sp-1JZ"/>
                             <constraint firstItem="Hla-ly-v7A" firstAttribute="leading" secondItem="DxN-2W-PcT" secondAttribute="leadingMargin" id="ix3-io-j0o"/>
@@ -1842,9 +1829,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTxt" destination="Xrq-tK-cc6" id="0eC-Z3-cZY"/>
-                        <outlet property="nombreTxt" destination="q9i-Je-nOW" id="jqM-FW-GTe"/>
-                        <outlet property="telTxt" destination="rde-2v-DTp" id="oBj-nn-kZD"/>
+                        <outlet property="pickerAutos" destination="Xle-OB-vZB" id="icf-3U-bau"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVd-NE-8cW" sceneMemberID="firstResponder"/>
@@ -1866,6 +1851,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vc7-SM-Yef">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFq-uQ-X6D">
+                                <rect key="frame" x="0.0" y="332" width="320" height="126"/>
+                            </pickerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Li8-w9-C4z">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
@@ -1898,36 +1886,14 @@
                                 </items>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tu nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CRY-z1-FiL">
-                                <rect key="frame" x="16" y="335" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tu email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNA-9B-Gqt">
-                                <rect key="frame" x="16" y="373" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tu telefono" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-CR-YVq">
-                                <rect key="frame" x="16" y="411" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITA A SERVICIO (5/7)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFh-On-dUX">
                                 <rect key="frame" x="16" y="274" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kilometros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFj-VY-jZQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Kilometros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFj-VY-jZQ">
                                 <rect key="frame" x="16" y="294" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1945,6 +1911,7 @@
                                 </state>
                                 <connections>
                                     <action selector="aceptarButton:" destination="RvJ-ag-PB2" eventType="touchUpInside" id="haq-Ob-bpa"/>
+                                    <segue destination="omC-hT-g6b" kind="presentation" id="aAF-jn-jhF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qrr-k5-bYv">
@@ -1965,8 +1932,11 @@
                             <constraint firstItem="Li8-w9-C4z" firstAttribute="top" secondItem="Qrr-k5-bYv" secondAttribute="bottom" id="5Me-RP-w5i"/>
                             <constraint firstItem="eFh-On-dUX" firstAttribute="centerX" secondItem="VtR-Hw-gwG" secondAttribute="centerX" id="A0c-pn-2g3"/>
                             <constraint firstItem="Vc7-SM-Yef" firstAttribute="leading" secondItem="VtR-Hw-gwG" secondAttribute="leading" id="DYB-Cl-5Rz"/>
+                            <constraint firstItem="tFq-uQ-X6D" firstAttribute="top" secondItem="EFj-VY-jZQ" secondAttribute="bottom" constant="17" id="EfP-OK-mCM"/>
                             <constraint firstItem="elV-s8-bgq" firstAttribute="trailing" secondItem="VtR-Hw-gwG" secondAttribute="trailingMargin" id="FAM-dD-Slg"/>
+                            <constraint firstAttribute="trailing" secondItem="tFq-uQ-X6D" secondAttribute="trailing" id="G3B-pg-0z2"/>
                             <constraint firstAttribute="trailing" secondItem="Vc7-SM-Yef" secondAttribute="trailing" id="L5A-Ah-5KK"/>
+                            <constraint firstItem="Qrr-k5-bYv" firstAttribute="top" secondItem="tFq-uQ-X6D" secondAttribute="bottom" constant="20" id="LKC-WJ-nze"/>
                             <constraint firstItem="Li8-w9-C4z" firstAttribute="leading" secondItem="VtR-Hw-gwG" secondAttribute="leading" id="QEA-dP-2wU"/>
                             <constraint firstAttribute="trailing" secondItem="Li8-w9-C4z" secondAttribute="trailing" id="TD1-Gv-FBd"/>
                             <constraint firstItem="rxg-H2-f8w" firstAttribute="top" secondItem="Li8-w9-C4z" secondAttribute="bottom" id="XQP-CG-e8r"/>
@@ -1975,6 +1945,7 @@
                             <constraint firstItem="eFh-On-dUX" firstAttribute="trailing" secondItem="VtR-Hw-gwG" secondAttribute="trailingMargin" id="bf8-Jd-7f0"/>
                             <constraint firstItem="Vc7-SM-Yef" firstAttribute="top" secondItem="VtR-Hw-gwG" secondAttribute="top" id="dcu-h3-IA8"/>
                             <constraint firstItem="Qrr-k5-bYv" firstAttribute="leading" secondItem="VtR-Hw-gwG" secondAttribute="leadingMargin" id="eKI-Mp-mI1"/>
+                            <constraint firstItem="tFq-uQ-X6D" firstAttribute="leading" secondItem="VtR-Hw-gwG" secondAttribute="leading" id="ejE-D3-aE6"/>
                             <constraint firstItem="Vc7-SM-Yef" firstAttribute="leading" secondItem="VtR-Hw-gwG" secondAttribute="leading" id="iNP-Q0-SWZ"/>
                             <constraint firstItem="eFh-On-dUX" firstAttribute="top" secondItem="Vc7-SM-Yef" secondAttribute="bottom" constant="-294" id="pk7-bp-Ud2"/>
                             <constraint firstItem="eFh-On-dUX" firstAttribute="leading" secondItem="VtR-Hw-gwG" secondAttribute="leadingMargin" id="rgV-f4-SWW"/>
@@ -1983,9 +1954,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTxt" destination="fNA-9B-Gqt" id="MI2-Xm-1gX"/>
-                        <outlet property="nombreTxt" destination="CRY-z1-FiL" id="RTK-fn-Riz"/>
-                        <outlet property="telTxt" destination="RFy-CR-YVq" id="TeT-bI-UON"/>
+                        <outlet property="pickerAutos" destination="tFq-uQ-X6D" id="5Mc-g8-Q6T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLc-dl-dnT" sceneMemberID="firstResponder"/>
@@ -2292,8 +2261,8 @@
         <image name="tramites" width="341" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="v5m-oe-pbD"/>
         <segue reference="uau-bg-omA"/>
-        <segue reference="d4b-tp-mXl"/>
         <segue reference="pgP-Tn-JFR"/>
     </inferredMetricsTieBreakers>
 </document>
