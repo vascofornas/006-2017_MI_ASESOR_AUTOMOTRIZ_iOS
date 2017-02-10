@@ -92,7 +92,8 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
         let km = UserDefaults.standard.object(forKey:"misKmCita") as? String
         let tipo = UserDefaults.standard.object(forKey:"miTipoCita") as? String
         let taller = UserDefaults.standard.object(forKey:"miEmailTallerAgencia") as? String
-        //let comentarios = UserDefaults.standard.object(forKey:"misComentariosCita") as? String
+        let emailAsesor = UserDefaults.standard.object(forKey:"miAsesorEmail") as? String
+    
         
         print (nombre_usuario!)
         print(email_usuario!)
@@ -105,6 +106,7 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
         print (tipo!)
         print(comentarios!)
         print(taller!)
+        print(emailAsesor!)
         
         
       //  let myURL = NSURL (string: "http://www.miasesorautomotriz.com/php_ios/scripts/enviarCita.php");
