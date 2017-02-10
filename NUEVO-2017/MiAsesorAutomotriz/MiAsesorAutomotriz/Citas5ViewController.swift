@@ -219,7 +219,7 @@ class Citas5ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
                                                         let x = friendObj["km"]!
                                                         let myString = String(describing: x!)
                                                         let fullName = ["Nombre": myString]
-                                                        print (fullName)
+                                                         print (fullName)
                                                         self.searchResults.append(fullName)
                                                         
                                                     }
@@ -281,8 +281,8 @@ class Citas5ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
         
         
         let prefs = UserDefaults.standard
-        prefs.setValue(searchResults[row]["Nombre"], forKey: "misKm_Cita")
-        if let hh = UserDefaults.standard.object(forKey:"misKm_Cita") as? String
+        prefs.setValue(searchResults[row]["Nombre"], forKey: "misKmCita")
+        if let hh = UserDefaults.standard.object(forKey:"misKmCita") as? String
         {
             print ("Km:" + hh)
         }

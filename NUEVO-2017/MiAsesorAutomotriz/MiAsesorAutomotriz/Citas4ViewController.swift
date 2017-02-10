@@ -277,8 +277,8 @@ class Citas4ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
         
         
         let prefs = UserDefaults.standard
-        prefs.setValue(searchResults[row]["Nombre"], forKey: "miAno_Cita")
-        if let hh = UserDefaults.standard.object(forKey:"miAno_Cita") as? String
+        prefs.setValue(searchResults[row]["Nombre"], forKey: "miAnoCita")
+        if let hh = UserDefaults.standard.object(forKey:"miAnoCita") as? String
         {
             print ("Año:" + hh)
         }

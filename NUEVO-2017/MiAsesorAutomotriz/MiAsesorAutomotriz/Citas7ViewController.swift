@@ -10,7 +10,7 @@
 import UIKit
 import MessageUI
 
-class Citas7ViewController: UIViewController, UITextFieldDelegate,MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate {
+class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate {
     
     
     
@@ -30,9 +30,9 @@ class Citas7ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.comentariosTxt.delegate = self
         
-        
-        
+        comentariosTxt.returnKeyType = UIReturnKeyType.done
        
         
         
@@ -52,6 +52,14 @@ class Citas7ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
         
         
     }
+ 
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -65,11 +73,116 @@ class Citas7ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
     
     @IBAction func aceptarButton(_ sender: Any) {
         
+        let comentarios = comentariosTxt.text
+        let prefs = UserDefaults.standard
+        prefs.setValue(comentarios, forKey: "misComentariosCita")
+        if let hh = UserDefaults.standard.object(forKey:"misComentariosCita") as? String
+        {
+            print ("Comentarios:" + hh)
+        }
+        
+        
+        let nombre_usuario = UserDefaults.standard.object(forKey:"miNombre") as? String
+        let email_usuario = UserDefaults.standard.object(forKey:"miEmail") as? String
+        let tel_usuario = UserDefaults.standard.object(forKey:"miTel") as? String
+        let modelo = UserDefaults.standard.object(forKey:"miModeloCita") as? String
+        let ano = UserDefaults.standard.object(forKey:"miAnoCita") as? String
+        let fecha = UserDefaults.standard.object(forKey:"miFechaCita") as? String
+        let hora = UserDefaults.standard.object(forKey:"miHoraCita") as? String
+        let km = UserDefaults.standard.object(forKey:"misKmCita") as? String
+        let tipo = UserDefaults.standard.object(forKey:"miTipoCita") as? String
+        let taller = UserDefaults.standard.object(forKey:"miEmailTallerAgencia") as? String
+        //let comentarios = UserDefaults.standard.object(forKey:"misComentariosCita") as? String
+        
+        print (nombre_usuario!)
+        print(email_usuario!)
+        print (tel_usuario!)
+        print (modelo!)
+            print (ano!)
+        print (fecha!)
+        print (hora!)
+        print (km!)
+        print (tipo!)
+        print(comentarios!)
+        print(taller!)
+        
+        
+      //  let myURL = NSURL (string: "http://www.miasesorautomotriz.com/php_ios/scripts/enviarCita.php");
+        
+     //   let request = NSMutableURLRequest (url:myURL! as URL);
+     //   request.httpMethod = "POST";
         
         
         
         
+        // let postString = ("nombreAgencia=\(codigoAgencia!)");
         
+   //     request.httpBody = postString.data (using: String.Encoding.utf8);
+        
+  //      URLSession.shared.dataTask(with: request as URLRequest,
+   //                                completionHandler: { (data, response,error) -> Void in
+                                    
+    //                                DispatchQueue.main.async
+     //                                   {
+     //                                       if (error != nil)
+      //                                      {
+      //                                          //display an alert
+       //                                         let myAlert = UIAlertController(title:"Aviso",message:error?.localizedDescription,
+      //                                                                          preferredStyle:UIAlertControllerStyle.alert);
+       //                                         let okAction = UIAlertAction(title:"Cerrar",style:UIAlertActionStyle.default, handler: nil);
+                                                
+        //                                        myAlert.addAction(okAction);
+            //                                    self.present(myAlert,animated:true,completion:nil)
+            //                                    return
+           //                                 }
+                                            
+           //                                 do {
+           //                                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                                                
+          //                                      if let parseJSON = json {
+                                                    
+           //                                         let codigo_de_agencia = parseJSON["codigo_agencia"] as! String?
+                                                    
+           //                                         if (codigo_de_agencia != nil){
+                                                        //pasamos los datos NSUserDefaults
+                                                        
+            //
+            //                                            let nombre_de_agencia = parseJSON["nombre_agencia"] as! String?
+            //                                            let direccion_de_agencia = parseJSON["direccion_agencia"] as! String?
+                                                        
+            //                                            let financiera_de_agencia = parseJSON["financiera"] as! String?
+                   //                                     let auxilio_vial_mex = parseJSON["auxilio_vial_mex"] as! String?
+                   ////                                     let auxilio_vial_usa = parseJSON["auxilio_vial_usa"] as! String?
+                    //                                    let app_store_agencia = parseJSON["app_store_agencia"] as! String?
+                   //                                     let autos_nuevos = parseJSON["autos_nuevos"] as! String?
+                                                        
+                                                        
+                                                        
+        
+                                                        
+        
+        
+             //                                       }
+               //                                     else{
+               //                                         //alert
+                 //                                       let mensaje = parseJSON["message"] as? String
+                  //                                      let myAlert = UIAlertController(title:"Aviso",message:mensaje,
+                //                                                                        preferredStyle:UIAlertControllerStyle.alert);
+                  //                                      let okAction = UIAlertAction(title:"Cerrar",style:UIAlertActionStyle.default, handler: nil);
+        
+                   //                                     myAlert.addAction(okAction);
+                 ///                                       self.present(myAlert,animated:true,completion:nil)
+                   //                                 }
+                   //                             }
+                       //
+                       //                     }catch let error as NSError{
+                       //                         print (error)
+                       //                     }
+                        //            }
+       // }).resume()
+        
+        
+
         
     }
     @IBAction func llamarButton(_ sender: Any) {

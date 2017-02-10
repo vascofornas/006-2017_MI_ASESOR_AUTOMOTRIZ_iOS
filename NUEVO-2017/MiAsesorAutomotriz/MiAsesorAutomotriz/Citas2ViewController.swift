@@ -76,8 +76,8 @@ class Citas2ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
         fechaLabel.text = fecha + " " +  hora
      
         let prefs = UserDefaults.standard
-        prefs.setValue(fecha, forKey: "miFecha")
-        prefs.setValue(hora, forKey: "miHora")
+        prefs.setValue(fecha, forKey: "miFechaCita")
+        prefs.setValue(hora, forKey: "miHoraCita")
         
         print (fecha)
         print (hora)

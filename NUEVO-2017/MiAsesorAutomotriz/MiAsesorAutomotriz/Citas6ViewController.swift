@@ -24,7 +24,7 @@ class Citas6ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
     var hora = String()
     
     
-    var searchResults = [["Nombre": "Cargando años"]]
+    var searchResults = [["Nombre": "Cargando tipos"]]
     
     
     override func viewDidLoad() {
@@ -167,7 +167,7 @@ class Citas6ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
         
         
         // Create URL
-        let myUrl = URL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/getAnos.php")
+        let myUrl = URL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/getTipos.php")
         
         // Create HTTP Request
         let request = NSMutableURLRequest(url:myUrl!);
@@ -212,12 +212,12 @@ class Citas6ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
                                                 
                                                 if let friends  = parseJSON["friends"] as? [AnyObject]
                                                 {
-                                                    let primerName = ["Nombre": "Selecciona un año" ]
+                                                    let primerName = ["Nombre": "Selecciona un tipo" ]
                                                     self.searchResults.append(primerName)
                                                     
                                                     for friendObj in friends
                                                     {
-                                                        let fullName = ["Nombre": friendObj["ano"] as! String]
+                                                        let fullName = ["Nombre": friendObj["tipo"] as! String]
                                                         
                                                         self.searchResults.append(fullName)
                                                         
@@ -278,10 +278,10 @@ class Citas6ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
         
         
         let prefs = UserDefaults.standard
-        prefs.setValue(searchResults[row]["Nombre"], forKey: "miAno_Cita")
-        if let hh = UserDefaults.standard.object(forKey:"miAno_Cita") as? String
+        prefs.setValue(searchResults[row]["Nombre"], forKey: "miTipoCita")
+        if let hh = UserDefaults.standard.object(forKey:"miTipoCita") as? String
         {
-            print ("Año:" + hh)
+            print ("Tipo:" + hh)
         }
         
     }
