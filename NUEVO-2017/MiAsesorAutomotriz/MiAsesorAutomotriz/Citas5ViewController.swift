@@ -174,8 +174,8 @@ class Citas5ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
         
         if let x = UserDefaults.standard.object(forKey:"miCodigoAgencia") as? String {
             print (x)
-            var postString = "searchWord=\(x)".addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed);
-            print (postString)
+            let postString = "searchWord=\(x)".addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed);
+            print (postString as Any)
             request.httpBody = postString?.data(using: String.Encoding.utf8)
             request.setValue("\(request.httpBody?.count)", forHTTPHeaderField:"Content-Length")
         }
@@ -216,8 +216,8 @@ class Citas5ViewController: UIViewController, UITextFieldDelegate,MFMailComposeV
                                                     
                                                     for friendObj in friends
                                                     {
-                                                        let x = friendObj["km"]
-                                                        let myString = String(describing: x)
+                                                        let x = friendObj["km"]!
+                                                        let myString = String(describing: x!)
                                                         let fullName = ["Nombre": myString]
                                                         print (fullName)
                                                         self.searchResults.append(fullName)
