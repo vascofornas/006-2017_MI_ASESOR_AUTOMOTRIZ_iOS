@@ -25,6 +25,7 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
     var hora = String()
     
     
+    var searchResults = [["Nombre": "Cargando asesores", "Apellidos": " de la agencia", "Id": "656", "Tel":"656", "Email":"email"]]
     
     
     override func viewDidLoad() {
@@ -111,84 +112,94 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
         print (agencia!)
         
         
-      //  let myURL = NSURL (string: "http://www.miasesorautomotriz.com/php_ios/scripts/enviarCita.php");
-        
-     //   let request = NSMutableURLRequest (url:myURL! as URL);
-     //   request.httpMethod = "POST";
+        // Dismiss the keyboard
         
         
+        // Create URL
+        let myUrl = URL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/enviarCita.php")
         
+        // Create HTTP Request
+        let request = NSMutableURLRequest(url:myUrl!);
+        request.httpMethod = "POST";
         
-        // let postString = ("nombreAgencia=\(codigoAgencia!)");
+        if let x = UserDefaults.standard.object(forKey:"miCodigoAgencia") as? String {
+            print (x)
+            let postString = "searchWord=\(x)".addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed);
+            print (postString as Any)
+            request.httpBody = postString?.data(using: String.Encoding.utf8)
+            request.setValue("\(request.httpBody?.count)", forHTTPHeaderField:"Content-Length")
+        }
         
-   //     request.httpBody = postString.data (using: String.Encoding.utf8);
-        
-  //      URLSession.shared.dataTask(with: request as URLRequest,
-   //                                completionHandler: { (data, response,error) -> Void in
+        // Execute HTTP Request
+        URLSession.shared.dataTask(with: request as URLRequest,
+                                   completionHandler: { (data, response,error) -> Void in
                                     
-    //                                DispatchQueue.main.async
-     //                                   {
-     //                                       if (error != nil)
-      //                                      {
-      //                                          //display an alert
-       //                                         let myAlert = UIAlertController(title:"Aviso",message:error?.localizedDescription,
-      //                                                                          preferredStyle:UIAlertControllerStyle.alert);
-       //                                         let okAction = UIAlertAction(title:"Cerrar",style:UIAlertActionStyle.default, handler: nil);
-                                                
-        //                                        myAlert.addAction(okAction);
-            //                                    self.present(myAlert,animated:true,completion:nil)
-            //                                    return
-           //                                 }
+                                    // Run new async task to be able to interact with UI
+                                    DispatchQueue.main.async {
+                                        
+                                        // Check if error took place
+                                        if error != nil
+                                        {
+                                            // display an alert message
+                                            self.displayAlertMessage(error!.localizedDescription)
+                                            return
+                                        }
+                                        
+                                        
+                                        do {
                                             
-           //                                 do {
-           //                                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                                            // Convert data returned from server to NSDictionary
+                                            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                                            
+                                            
+                                            
+                                            // Cleare old search data and reload table
+                                            self.searchResults.removeAll(keepingCapacity: false)
+                                            
+                                            
+                                            // If friends array is not empty, populate searchResults array
+                                            if let parseJSON = json {
                                                 
-          //                                      if let parseJSON = json {
+                                                if let friends  = parseJSON["friends"] as? [AnyObject]
+                                                {
+                                                    let primerName = ["Nombre": "Selecciona un asesor" ,"Apellidos": " ", "Id": " ", "Tel": " ", "Email": " " ]
+                                                    self.searchResults.append(primerName)
                                                     
-           //                                         let codigo_de_agencia = parseJSON["codigo_agencia"] as! String?
+                                                    for friendObj in friends
+                                                    {
+                                                        let fullName = ["Nombre": friendObj["nombre"] as! String, "Apellidos": friendObj["apellidos"] as! String, "Id": friendObj["id"] as! String, "Tel": friendObj["tel"] as! String, "Email": friendObj["email"] as! String]
+                                                        
+                                                        self.searchResults.append(fullName)
+                                                        
+                                                    }
                                                     
-           //                                         if (codigo_de_agencia != nil){
-                                                        //pasamos los datos NSUserDefaults
-                                                        
-            //
-            //                                            let nombre_de_agencia = parseJSON["nombre_agencia"] as! String?
-            //                                            let direccion_de_agencia = parseJSON["direccion_agencia"] as! String?
-                                                        
-            //                                            let financiera_de_agencia = parseJSON["financiera"] as! String?
-                   //                                     let auxilio_vial_mex = parseJSON["auxilio_vial_mex"] as! String?
-                   ////                                     let auxilio_vial_usa = parseJSON["auxilio_vial_usa"] as! String?
-                    //                                    let app_store_agencia = parseJSON["app_store_agencia"] as! String?
-                   //                                     let autos_nuevos = parseJSON["autos_nuevos"] as! String?
-                                                        
-                                                        
-                                                        
-        
-                                                        
-        
-        
-             //                                       }
-               //                                     else{
-               //                                         //alert
-                 //                                       let mensaje = parseJSON["message"] as? String
-                  //                                      let myAlert = UIAlertController(title:"Aviso",message:mensaje,
-                //                                                                        preferredStyle:UIAlertControllerStyle.alert);
-                  //                                      let okAction = UIAlertAction(title:"Cerrar",style:UIAlertActionStyle.default, handler: nil);
-        
-                   //                                     myAlert.addAction(okAction);
-                 ///                                       self.present(myAlert,animated:true,completion:nil)
-                   //                                 }
-                   //                             }
-                       //
-                       //                     }catch let error as NSError{
-                       //                         print (error)
-                       //                     }
-                        //            }
-       // }).resume()
-        
-        
-
-        
-    }
+                                                    
+                                                  
+                                                    
+                                                } else if(parseJSON["message"] != nil)
+                                                {
+                                                    // if no friends returned, display message returned from server side
+                                                    let errorMessage = parseJSON["message"] as? String
+                                                    
+                                                    if(errorMessage != nil)
+                                                    {
+                                                        // display an alert message
+                                                        self.displayAlertMessage(errorMessage!)
+                                                    }
+                                                }
+                                            }
+                                            
+                                        } catch {
+                                            print(error);
+                                        }
+                                        
+                                    } // End of dispatch_async
+                                    
+                                    
+        }) // End of data task
+            
+            
+            .resume()    }
     @IBAction func llamarButton(_ sender: Any) {
         if let y = UserDefaults.standard.object(forKey:"miAsesor") as? String
         {
