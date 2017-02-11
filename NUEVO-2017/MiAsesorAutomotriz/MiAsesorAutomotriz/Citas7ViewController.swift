@@ -112,94 +112,32 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
         print (agencia!)
         
         
-        // Dismiss the keyboard
         
         
-        // Create URL
-        let myUrl = URL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/enviarCita.php")
         
-        // Create HTTP Request
-        let request = NSMutableURLRequest(url:myUrl!);
-        request.httpMethod = "POST";
+        let request = NSMutableURLRequest(url: NSURL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/enviarCita.php")! as URL)
+        request.httpMethod = "POST"
+        let postString = "a=\(nombre_usuario)&b=\(email_usuario)&c=\(tel_usuario)&d=\(modelo)&e=\(ano)&f=\(fecha)&g=\(tel_usuario)&h=\(modelo)"
+        request.httpBody = postString.data(using: String.Encoding.utf8)
         
-        if let x = UserDefaults.standard.object(forKey:"miCodigoAgencia") as? String {
-            print (x)
-            let postString = "searchWord=\(x)".addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed);
-            print (postString as Any)
-            request.httpBody = postString?.data(using: String.Encoding.utf8)
-            request.setValue("\(request.httpBody?.count)", forHTTPHeaderField:"Content-Length")
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            print("response = \(response)")
+            
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print("responseString = \(responseString)")
         }
+        task.resume()
+                                        
         
-        // Execute HTTP Request
-        URLSession.shared.dataTask(with: request as URLRequest,
-                                   completionHandler: { (data, response,error) -> Void in
-                                    
-                                    // Run new async task to be able to interact with UI
-                                    DispatchQueue.main.async {
-                                        
-                                        // Check if error took place
-                                        if error != nil
-                                        {
-                                            // display an alert message
-                                            self.displayAlertMessage(error!.localizedDescription)
-                                            return
-                                        }
-                                        
-                                        
-                                        do {
+    }
                                             
-                                            // Convert data returned from server to NSDictionary
-                                            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                                            
-                                            
-                                            
-                                            // Cleare old search data and reload table
-                                            self.searchResults.removeAll(keepingCapacity: false)
-                                            
-                                            
-                                            // If friends array is not empty, populate searchResults array
-                                            if let parseJSON = json {
-                                                
-                                                if let friends  = parseJSON["friends"] as? [AnyObject]
-                                                {
-                                                    let primerName = ["Nombre": "Selecciona un asesor" ,"Apellidos": " ", "Id": " ", "Tel": " ", "Email": " " ]
-                                                    self.searchResults.append(primerName)
-                                                    
-                                                    for friendObj in friends
-                                                    {
-                                                        let fullName = ["Nombre": friendObj["nombre"] as! String, "Apellidos": friendObj["apellidos"] as! String, "Id": friendObj["id"] as! String, "Tel": friendObj["tel"] as! String, "Email": friendObj["email"] as! String]
-                                                        
-                                                        self.searchResults.append(fullName)
-                                                        
-                                                    }
-                                                    
-                                                    
-                                                  
-                                                    
-                                                } else if(parseJSON["message"] != nil)
-                                                {
-                                                    // if no friends returned, display message returned from server side
-                                                    let errorMessage = parseJSON["message"] as? String
-                                                    
-                                                    if(errorMessage != nil)
-                                                    {
-                                                        // display an alert message
-                                                        self.displayAlertMessage(errorMessage!)
-                                                    }
-                                                }
-                                            }
-                                            
-                                        } catch {
-                                            print(error);
-                                        }
-                                        
-                                    } // End of dispatch_async
-                                    
-                                    
-        }) // End of data task
-            
-            
-            .resume()    }
     @IBAction func llamarButton(_ sender: Any) {
         if let y = UserDefaults.standard.object(forKey:"miAsesor") as? String
         {
