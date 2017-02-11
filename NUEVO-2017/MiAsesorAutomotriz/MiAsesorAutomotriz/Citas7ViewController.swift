@@ -117,7 +117,7 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
         
         let request = NSMutableURLRequest(url: NSURL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/enviarCita.php")! as URL)
         request.httpMethod = "POST"
-        let postString = "a=\(nombre_usuario)&b=\(email_usuario)&c=\(tel_usuario)&d=\(modelo)&e=\(ano)&f=\(fecha)&g=\(tel_usuario)&h=\(modelo)"
+        let postString = "a=\(nombre_usuario!)&b=\(email_usuario!)&c=\(tel_usuario!)&d=\(modelo!)&e=\(ano!)&f=\(km!)&g=\(tel_usuario)&h=\(modelo)"
         request.httpBody = postString.data(using: String.Encoding.utf8)
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) {
