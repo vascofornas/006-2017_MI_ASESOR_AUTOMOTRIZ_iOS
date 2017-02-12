@@ -2112,6 +2112,7 @@
                     </view>
                     <connections>
                         <outlet property="comentariosTxt" destination="ixX-g7-7VN" id="Tah-sg-5hc"/>
+                        <segue destination="cS0-oT-8TE" kind="presentation" id="kbb-vm-Ou2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fB5-rO-uv5" sceneMemberID="firstResponder"/>

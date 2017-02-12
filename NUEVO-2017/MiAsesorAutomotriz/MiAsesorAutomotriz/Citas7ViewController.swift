@@ -96,6 +96,7 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
         let emailAsesor = UserDefaults.standard.object(forKey:"miAsesorEmail") as? String
         let agencia = UserDefaults.standard.object(forKey:"miCodigoAgencia") as? String
     
+        let codigo_cita = randomString(length: 7)
         
         print (nombre_usuario!)
         print(email_usuario!)
@@ -110,6 +111,7 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
         print(taller!)
         print(emailAsesor!)
         print (agencia!)
+        print (codigo_cita)
         
         
         
@@ -117,7 +119,7 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
         
         let request = NSMutableURLRequest(url: NSURL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/enviarCita.php")! as URL)
         request.httpMethod = "POST"
-        let postString = "a=\(nombre_usuario!)&b=\(email_usuario!)&c=\(tel_usuario!)&d=\(modelo!)&e=\(ano!)&f=\(km!)&g=\(tel_usuario)&h=\(modelo)"
+        let postString = "a=\(nombre_usuario!)&b=\(email_usuario!)&c=\(tel_usuario!)&d=\(modelo!)&e=\(ano!)&f=\(km!)&g=\(tipo!)&h=\(fecha!)&i=\(hora!)&j=\(comentarios!)&k=\(codigo_cita)&l=\(agencia!)&m=\(taller!)&n=\(emailAsesor!)"
         request.httpBody = postString.data(using: String.Encoding.utf8)
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) {
@@ -132,12 +134,33 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
             
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             print("responseString = \(responseString)")
+            
+            let alertController = UIAlertController(title: "Gracias", message: "Cita a Servicio " + codigo_cita + " enviada con éxito", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Cerrar", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
         }
         task.resume()
                                         
         
     }
-                                            
+    func randomString(length: Int) -> String {
+        
+        let letters : NSString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        
+        return randomString
+    }
     @IBAction func llamarButton(_ sender: Any) {
         if let y = UserDefaults.standard.object(forKey:"miAsesor") as? String
         {
