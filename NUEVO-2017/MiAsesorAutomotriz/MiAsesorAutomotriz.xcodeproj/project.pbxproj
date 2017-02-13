@@ -22,8 +22,8 @@
 		809A0A8A1E36F7EE00B47EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 809A0A891E36F7EE00B47EAC /* Assets.xcassets */; };
 		809A0A8D1E36F7EE00B47EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809A0A8B1E36F7EE00B47EAC /* LaunchScreen.storyboard */; };
 		809A0A991E39888C00B47EAC /* AgenciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A0A981E39888C00B47EAC /* AgenciaViewController.swift */; };
-		80CAF29C1E46C3A000424EFC /* CostosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF29B1E46C3A000424EFC /* CostosViewController.swift */; };
-		80CAF29E1E46C3B000424EFC /* TramitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF29D1E46C3B000424EFC /* TramitesViewController.swift */; };
+		809BEC5D1E5266B200C19249 /* Tramites1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BEC5C1E5266B200C19249 /* Tramites1ViewController.swift */; };
+		809BEC5F1E52671A00C19249 /* Costos1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BEC5E1E52671A00C19249 /* Costos1ViewController.swift */; };
 		80CAF2A01E46C3BF00424EFC /* AseguradorasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */; };
 		80CAF2A21E4819F200424EFC /* MiAutoEditarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF2A11E4819F200424EFC /* MiAutoEditarViewController.swift */; };
 		A99956B81E4C5608005D8EBC /* Citas4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99956B71E4C5608005D8EBC /* Citas4ViewController.swift */; };
@@ -48,8 +48,8 @@
 		809A0A8C1E36F7EE00B47EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		809A0A8E1E36F7EF00B47EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		809A0A981E39888C00B47EAC /* AgenciaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgenciaViewController.swift; sourceTree = "<group>"; };
-		80CAF29B1E46C3A000424EFC /* CostosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostosViewController.swift; sourceTree = "<group>"; };
-		80CAF29D1E46C3B000424EFC /* TramitesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TramitesViewController.swift; sourceTree = "<group>"; };
+		809BEC5C1E5266B200C19249 /* Tramites1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tramites1ViewController.swift; sourceTree = "<group>"; };
+		809BEC5E1E52671A00C19249 /* Costos1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Costos1ViewController.swift; sourceTree = "<group>"; };
 		80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AseguradorasViewController.swift; sourceTree = "<group>"; };
 		80CAF2A11E4819F200424EFC /* MiAutoEditarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiAutoEditarViewController.swift; sourceTree = "<group>"; };
 		A99956B71E4C5608005D8EBC /* Citas4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Citas4ViewController.swift; sourceTree = "<group>"; };
@@ -105,9 +105,9 @@
 				80788D781E4D5AB200C08578 /* Citas6ViewController.swift */,
 				80788D7A1E4D5E1700C08578 /* Citas7ViewController.swift */,
 				80788D761E4C02F900C08578 /* AutosNuevosViewController.swift */,
-				80CAF29B1E46C3A000424EFC /* CostosViewController.swift */,
-				80CAF29D1E46C3B000424EFC /* TramitesViewController.swift */,
 				80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */,
+				809BEC5C1E5266B200C19249 /* Tramites1ViewController.swift */,
+				809BEC5E1E52671A00C19249 /* Costos1ViewController.swift */,
 			);
 			path = MiAsesorAutomotriz;
 			sourceTree = "<group>";
@@ -188,13 +188,13 @@
 				801EF4EC1E46C28700DB5E72 /* Citas1ViewController.swift in Sources */,
 				80788D771E4C02F900C08578 /* AutosNuevosViewController.swift in Sources */,
 				80788D791E4D5AB200C08578 /* Citas6ViewController.swift in Sources */,
+				809BEC5F1E52671A00C19249 /* Costos1ViewController.swift in Sources */,
 				809A0A851E36F7EC00B47EAC /* ViewController.swift in Sources */,
 				801EF4EA1E46C27100DB5E72 /* MiAutoViewController.swift in Sources */,
+				809BEC5D1E5266B200C19249 /* Tramites1ViewController.swift in Sources */,
 				80788D751E4AAB8200C08578 /* Citas3ViewController.swift in Sources */,
 				801EF4E21E46A56C00DB5E72 /* MenuViewController.swift in Sources */,
 				8092A0481E43F13900258268 /* AsesorViewController.swift in Sources */,
-				80CAF29C1E46C3A000424EFC /* CostosViewController.swift in Sources */,
-				80CAF29E1E46C3B000424EFC /* TramitesViewController.swift in Sources */,
 				A99956BA1E4C5CA9005D8EBC /* Citas5ViewController.swift in Sources */,
 				80CAF2A21E4819F200424EFC /* MiAutoEditarViewController.swift in Sources */,
 				80788D691E4A90E300C08578 /* Citas2ViewController.swift in Sources */,

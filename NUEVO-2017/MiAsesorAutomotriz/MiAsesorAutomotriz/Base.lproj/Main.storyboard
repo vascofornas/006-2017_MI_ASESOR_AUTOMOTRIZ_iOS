@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -647,7 +647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aW-PI-CGd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6193" y="-1661"/>
+            <point key="canvasLocation" x="8184" y="-1580"/>
         </scene>
         <!--Mi Auto View Controller-->
         <scene sceneID="jpK-ji-M0q">
@@ -1107,10 +1107,10 @@
             </objects>
             <point key="canvasLocation" x="3341.25" y="-1194.7183098591549"/>
         </scene>
-        <!--View Controller-->
+        <!--Costos1 View Controller-->
         <scene sceneID="UlD-uJ-HtM">
             <objects>
-                <viewController id="MrO-I9-Wie" sceneMemberID="viewController">
+                <viewController id="MrO-I9-Wie" customClass="Costos1ViewController" customModule="MiAsesorAutomotriz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4bx-Hw-nzQ"/>
                         <viewControllerLayoutGuide type="bottom" id="EV0-rq-v9h"/>
@@ -2112,12 +2112,12 @@
                     </view>
                     <connections>
                         <outlet property="comentariosTxt" destination="ixX-g7-7VN" id="Tah-sg-5hc"/>
-                        <segue destination="cS0-oT-8TE" kind="presentation" id="kbb-vm-Ou2"/>
+                        <segue destination="cS0-oT-8TE" kind="presentation" identifier="mySegueIdentifier" id="O5s-h8-PvJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fB5-rO-uv5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7053.75" y="-1896.1267605633802"/>
+            <point key="canvasLocation" x="6904" y="-1201"/>
         </scene>
         <!--Citas5 View Controller-->
         <scene sceneID="Q8x-VY-TxF">
@@ -2272,8 +2272,8 @@
         <image name="tramites" width="341" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SGC-39-SMy"/>
+        <segue reference="aCF-MI-Ytf"/>
+        <segue reference="O5s-h8-PvJ"/>
         <segue reference="uau-bg-omA"/>
-        <segue reference="pgP-Tn-JFR"/>
     </inferredMetricsTieBreakers>
 </document>

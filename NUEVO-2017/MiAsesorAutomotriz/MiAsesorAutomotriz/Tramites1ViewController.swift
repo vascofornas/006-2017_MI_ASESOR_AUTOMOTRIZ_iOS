@@ -1,14 +1,14 @@
 //
-//  CostosViewController.swift
+//  Tramites1ViewController.swift
 //  MiAsesorAutomotriz
 //
-//  Created by MODESTO VASCO FORNAS on 2/4/17.
+//  Created by MODESTO VASCO FORNAS on 2/13/17.
 //  Copyright © 2017 Modesto Vasco. All rights reserved.
 //
 
 import UIKit
 
-class CostosViewController: UIViewController {
+class Tramites1ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

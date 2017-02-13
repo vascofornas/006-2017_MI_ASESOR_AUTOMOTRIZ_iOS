@@ -136,14 +136,15 @@ class Citas7ViewController: UIViewController, UITextViewDelegate,MFMailComposeVi
             print("responseString = \(responseString)")
             
             let alertController = UIAlertController(title: "Gracias", message: "Cita a Servicio " + codigo_cita + " enviada con éxito", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Cerrar", style: .default, handler: nil)
+            let defaultAction = UIAlertAction(title: "Cerrar", style: .default, handler:  { action in self.performSegue(withIdentifier: "mySegueIdentifier", sender: self) })
             alertController.addAction(defaultAction)
             
             self.present(alertController, animated: true, completion: nil)
             
         }
         task.resume()
-                                        
+        
+       
         
     }
     func randomString(length: Int) -> String {
