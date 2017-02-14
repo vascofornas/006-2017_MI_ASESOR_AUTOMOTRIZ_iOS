@@ -28,6 +28,8 @@
 		809BEC631E5282F400C19249 /* Costos3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BEC621E5282F300C19249 /* Costos3ViewController.swift */; };
 		809BEC651E5284AB00C19249 /* Costos4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BEC641E5284AB00C19249 /* Costos4ViewController.swift */; };
 		809BEC671E52884B00C19249 /* Costos5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BEC661E52884B00C19249 /* Costos5ViewController.swift */; };
+		809BEC691E52932E00C19249 /* Tramites2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BEC681E52932E00C19249 /* Tramites2ViewController.swift */; };
+		809BEC6B1E529A6C00C19249 /* Tramites3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BEC6A1E529A6C00C19249 /* Tramites3ViewController.swift */; };
 		80CAF2A01E46C3BF00424EFC /* AseguradorasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */; };
 		80CAF2A21E4819F200424EFC /* MiAutoEditarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAF2A11E4819F200424EFC /* MiAutoEditarViewController.swift */; };
 		A99956B81E4C5608005D8EBC /* Citas4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99956B71E4C5608005D8EBC /* Citas4ViewController.swift */; };
@@ -58,6 +60,8 @@
 		809BEC621E5282F300C19249 /* Costos3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Costos3ViewController.swift; sourceTree = "<group>"; };
 		809BEC641E5284AB00C19249 /* Costos4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Costos4ViewController.swift; sourceTree = "<group>"; };
 		809BEC661E52884B00C19249 /* Costos5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Costos5ViewController.swift; sourceTree = "<group>"; };
+		809BEC681E52932E00C19249 /* Tramites2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tramites2ViewController.swift; sourceTree = "<group>"; };
+		809BEC6A1E529A6C00C19249 /* Tramites3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tramites3ViewController.swift; sourceTree = "<group>"; };
 		80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AseguradorasViewController.swift; sourceTree = "<group>"; };
 		80CAF2A11E4819F200424EFC /* MiAutoEditarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiAutoEditarViewController.swift; sourceTree = "<group>"; };
 		A99956B71E4C5608005D8EBC /* Citas4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Citas4ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				80788D761E4C02F900C08578 /* AutosNuevosViewController.swift */,
 				80CAF29F1E46C3BF00424EFC /* AseguradorasViewController.swift */,
 				809BEC5C1E5266B200C19249 /* Tramites1ViewController.swift */,
+				809BEC681E52932E00C19249 /* Tramites2ViewController.swift */,
+				809BEC6A1E529A6C00C19249 /* Tramites3ViewController.swift */,
 			);
 			path = MiAsesorAutomotriz;
 			sourceTree = "<group>";
@@ -216,8 +222,10 @@
 				809BEC631E5282F400C19249 /* Costos3ViewController.swift in Sources */,
 				809A0A991E39888C00B47EAC /* AgenciaViewController.swift in Sources */,
 				80788D7B1E4D5E1700C08578 /* Citas7ViewController.swift in Sources */,
+				809BEC6B1E529A6C00C19249 /* Tramites3ViewController.swift in Sources */,
 				A99956B81E4C5608005D8EBC /* Citas4ViewController.swift in Sources */,
 				80CAF2A01E46C3BF00424EFC /* AseguradorasViewController.swift in Sources */,
+				809BEC691E52932E00C19249 /* Tramites2ViewController.swift in Sources */,
 				809BEC671E52884B00C19249 /* Costos5ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
