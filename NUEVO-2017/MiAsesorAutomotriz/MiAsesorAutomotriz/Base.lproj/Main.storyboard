@@ -454,7 +454,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="aseguradora"/>
                                 <connections>
-                                    <segue destination="akP-kZ-Tk5" kind="presentation" id="7uU-gP-kQh"/>
+                                    <segue destination="akP-kZ-Tk5" kind="presentation" id="f64-bG-g9X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxV-st-5W3">
@@ -1107,10 +1107,10 @@
             </objects>
             <point key="canvasLocation" x="3281" y="-1194"/>
         </scene>
-        <!--View Controller-->
+        <!--Aseguradoras View Controller-->
         <scene sceneID="BeM-yn-x4v">
             <objects>
-                <viewController id="akP-kZ-Tk5" sceneMemberID="viewController">
+                <viewController id="akP-kZ-Tk5" customClass="AseguradorasViewController" customModule="MiAsesorAutomotriz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UCl-8w-9ph"/>
                         <viewControllerLayoutGuide type="bottom" id="2qo-Bv-KRw"/>
@@ -1127,29 +1127,55 @@
                                 <items>
                                     <barButtonItem image="home" id="5Ng-3e-9Pa">
                                         <connections>
-                                            <segue destination="cS0-oT-8TE" kind="presentation" id="M6f-a7-Oi4"/>
+                                            <segue destination="cS0-oT-8TE" kind="presentation" id="Wyu-rw-ItV"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="DZc-ze-bfD"/>
-                                    <barButtonItem image="llamar" id="UkF-ah-yDi"/>
+                                    <barButtonItem image="llamar" id="UkF-ah-yDi">
+                                        <connections>
+                                            <action selector="llamarButton:" destination="akP-kZ-Tk5" id="44W-xh-cLc"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ill-S5-07J"/>
-                                    <barButtonItem image="email" id="6zU-6G-E3E"/>
+                                    <barButtonItem image="email" id="6zU-6G-E3E">
+                                        <connections>
+                                            <action selector="emailButton:" destination="akP-kZ-Tk5" id="wn3-VI-6Pt"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="DtJ-fV-gjh"/>
-                                    <barButtonItem image="sms" id="GQo-wl-GMk"/>
+                                    <barButtonItem image="sms" id="GQo-wl-GMk">
+                                        <connections>
+                                            <action selector="smsButton:" destination="akP-kZ-Tk5" id="44T-bT-dyt"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Q4B-He-eN6"/>
-                                    <barButtonItem image="compartir" id="Nht-R9-zfZ"/>
+                                    <barButtonItem image="compartir" id="Nht-R9-zfZ">
+                                        <connections>
+                                            <action selector="compartirButton:" destination="akP-kZ-Tk5" id="9ZL-G1-6s1"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3Bt-hZ-Cq1"/>
                                 </items>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ASEGURADORAS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmu-jA-1dO">
+                                <rect key="frame" x="16" y="274" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9sB-J6-KSU" secondAttribute="trailing" id="0OL-S9-FSA"/>
+                            <constraint firstItem="jmu-jA-1dO" firstAttribute="trailing" secondItem="pls-54-j8c" secondAttribute="trailingMargin" id="260-JW-Ftj"/>
                             <constraint firstItem="9sB-J6-KSU" firstAttribute="leading" secondItem="pls-54-j8c" secondAttribute="leading" id="2lB-7d-xCO"/>
                             <constraint firstItem="bnV-V5-nWn" firstAttribute="leading" secondItem="pls-54-j8c" secondAttribute="leading" id="8am-aw-8gv"/>
                             <constraint firstItem="2qo-Bv-KRw" firstAttribute="top" secondItem="9sB-J6-KSU" secondAttribute="bottom" id="EeM-h9-EFQ"/>
+                            <constraint firstItem="jmu-jA-1dO" firstAttribute="leading" secondItem="pls-54-j8c" secondAttribute="leadingMargin" id="Ely-7m-B8K"/>
+                            <constraint firstItem="jmu-jA-1dO" firstAttribute="centerY" secondItem="pls-54-j8c" secondAttribute="centerY" id="JmT-g7-eW2"/>
                             <constraint firstItem="bnV-V5-nWn" firstAttribute="top" secondItem="pls-54-j8c" secondAttribute="top" id="OGA-hb-bEx"/>
+                            <constraint firstItem="jmu-jA-1dO" firstAttribute="centerX" secondItem="pls-54-j8c" secondAttribute="centerX" id="R9e-YK-Rjr"/>
                             <constraint firstAttribute="trailing" secondItem="bnV-V5-nWn" secondAttribute="trailing" id="X9w-J4-Pac"/>
                             <constraint firstAttribute="bottom" secondItem="bnV-V5-nWn" secondAttribute="bottom" id="le8-zr-Rdh"/>
                         </constraints>
@@ -3289,7 +3315,7 @@
         <image name="tramites" width="341" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yGH-ZS-ryG"/>
+        <segue reference="Wyu-rw-ItV"/>
         <segue reference="uau-bg-omA"/>
         <segue reference="aCF-MI-Ytf"/>
     </inferredMetricsTieBreakers>
