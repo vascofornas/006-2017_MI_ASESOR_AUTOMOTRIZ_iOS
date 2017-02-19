@@ -109,8 +109,12 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                             let app_store_agencia = parseJSON["app_store_agencia"] as! String?
                               let autos_nuevos = parseJSON["autos_nuevos"] as! String?
                                 let email_taller = parseJSON["email_taller"] as! String?
-                            
-
+                             let mapfre = parseJSON["aseguradora_mapfre"] as! String?
+                              let gnp = parseJSON["aseguradora_gnp"] as! String?
+                            let inbursa = parseJSON["aseguradora_inbursa"] as! String?
+                            let atlas = parseJSON["aseguradora_atlas"] as! String?
+                            let assistance = parseJSON["aseguradora_assistance"] as! String?
+                            let qualitas = parseJSON["aseguradora_qualitas"] as! String?
                             
                             let prefs = UserDefaults.standard
                             prefs.setValue(codigo_de_agencia, forKey: "miCodigoAgencia")
@@ -122,6 +126,13 @@ class AgenciaViewController: UIViewController, UITextFieldDelegate  {
                             prefs.setValue(app_store_agencia, forKey: "miAppStoreAgencia")
                             prefs.setValue(autos_nuevos, forKey: "miAutosNuevosAgencia")
                             prefs.setValue(email_taller, forKey: "miEmailTallerAgencia")
+                            
+                            prefs.setValue(mapfre, forKey: "miMapfre")
+                             prefs.setValue(gnp, forKey: "miGnp")
+                             prefs.setValue(inbursa, forKey: "miInbursa")
+                             prefs.setValue(atlas, forKey: "miAtlas")
+                            prefs.setValue(assistance, forKey: "miAssistance")
+                            prefs.setValue(qualitas, forKey: "miQualitas")
                             
                             
                             print ("Financiera:\(financiera_de_agencia)")

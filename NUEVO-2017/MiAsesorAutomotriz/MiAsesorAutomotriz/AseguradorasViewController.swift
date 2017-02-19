@@ -55,6 +55,171 @@ class AseguradorasViewController: UIViewController, UITextFieldDelegate,MFMailCo
         
     }
     
+    
+    @IBAction func gnpButton(_ sender: Any) {
+        
+        if let y = UserDefaults.standard.object(forKey:"miGnp") as? String
+        {
+            
+            let refreshAlert = UIAlertController(title: "Aviso", message: "Quieres marcar a tu aseguradora GNP ?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action: UIAlertAction!) in
+                
+                if let x = UserDefaults.standard.object(forKey:"miGnp") as? String
+                {
+                    
+                    print("Handle Ok logic here")
+                    if let url = URL(string: "tel://\(x)") {
+                        UIApplication.shared.open(url, options: [:])
+                    }
+                }
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Handle Cancel Logic here")
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+            
+        }
+    }
+    @IBAction func inbursaButton(_ sender: Any) {
+        if let y = UserDefaults.standard.object(forKey:"mInbursa") as? String
+        {
+            
+            let refreshAlert = UIAlertController(title: "Aviso", message: "Quieres marcar a tu aseguradora Inbursa ?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action: UIAlertAction!) in
+                
+                if let x = UserDefaults.standard.object(forKey:"miInbursa") as? String
+                {
+                    
+                    print("Handle Ok logic here")
+                    if let url = URL(string: "tel://\(x)") {
+                        UIApplication.shared.open(url, options: [:])
+                    }
+                }
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Handle Cancel Logic here")
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+            
+        }
+    }
+    @IBAction func atlasButton(_ sender: Any) {
+        if let y = UserDefaults.standard.object(forKey:"miAtlas") as? String
+        {
+            
+            let refreshAlert = UIAlertController(title: "Aviso", message: "Quieres marcar a tu aseguradora Atlas ?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action: UIAlertAction!) in
+                
+                if let x = UserDefaults.standard.object(forKey:"miAtlas") as? String
+                {
+                    
+                    print("Handle Ok logic here")
+                    if let url = URL(string: "tel://\(x)") {
+                        UIApplication.shared.open(url, options: [:])
+                    }
+                }
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Handle Cancel Logic here")
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+            
+        }
+    }
+    @IBAction func assistanceButton(_ sender: Any) {
+        
+        if let y = UserDefaults.standard.object(forKey:"miAssistance") as? String
+        {
+            
+            let refreshAlert = UIAlertController(title: "Aviso", message: "Quieres marcar a tu aseguradora Assistance ?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action: UIAlertAction!) in
+                
+                if let x = UserDefaults.standard.object(forKey:"miAssistance") as? String
+                {
+                    
+                    print("Handle Ok logic here")
+                    if let url = URL(string: "tel://\(x)") {
+                        UIApplication.shared.open(url, options: [:])
+                    }
+                }
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Handle Cancel Logic here")
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+            
+        }
+    }
+    @IBAction func qualitasButton(_ sender: Any) {
+        if let y = UserDefaults.standard.object(forKey:"miQualitas") as? String
+        {
+            
+            let refreshAlert = UIAlertController(title: "Aviso", message: "Quieres marcar a tu aseguradora Qualitas ?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action: UIAlertAction!) in
+                
+                if let x = UserDefaults.standard.object(forKey:"miQualitas") as? String
+                {
+                    
+                    print("Handle Ok logic here")
+                    if let url = URL(string: "tel://\(x)") {
+                        UIApplication.shared.open(url, options: [:])
+                    }
+                }
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Handle Cancel Logic here")
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+            
+        }
+    }
+    @IBAction func mafreButton(_ sender: Any) {
+        if let y = UserDefaults.standard.object(forKey:"miMapfre") as? String
+        {
+            
+            let refreshAlert = UIAlertController(title: "Aviso", message: "Quieres marcar a tu aseguradora Mapfre ?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action: UIAlertAction!) in
+                
+                if let x = UserDefaults.standard.object(forKey:"miMapfre") as? String
+                {
+                    
+                    print("Handle Ok logic here")
+                    if let url = URL(string: "tel://\(x)") {
+                        UIApplication.shared.open(url, options: [:])
+                    }
+                }
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Handle Cancel Logic here")
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+            
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
