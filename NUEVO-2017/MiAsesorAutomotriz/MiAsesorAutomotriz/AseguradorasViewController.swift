@@ -84,8 +84,10 @@ class AseguradorasViewController: UIViewController, UITextFieldDelegate,MFMailCo
             
         }
     }
+    
     @IBAction func inbursaButton(_ sender: Any) {
-        if let y = UserDefaults.standard.object(forKey:"mInbursa") as? String
+        print("ulsado inbursa")
+        if let y = UserDefaults.standard.object(forKey:"miInbursa") as? String
         {
             
             let refreshAlert = UIAlertController(title: "Aviso", message: "Quieres marcar a tu aseguradora Inbursa ?", preferredStyle: UIAlertControllerStyle.alert)

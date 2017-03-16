@@ -112,7 +112,6 @@ class Tramites3ViewController: UIViewController, UITextViewDelegate,MFMailCompos
         print(emailAsesor!)
         print (agencia!)
         print (codigo_cita)
-        print (tramite!)
         
         
         if (comentarios?.isEmpty)!

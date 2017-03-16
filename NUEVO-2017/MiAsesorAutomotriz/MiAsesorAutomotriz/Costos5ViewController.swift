@@ -104,7 +104,7 @@ class Costos5ViewController: UIViewController, UITextViewDelegate,MFMailComposeV
         print (ano!)
         print (fecha!)
         print (hora!)
-        print (km!)
+       
     
         print(comentarios!)
      
@@ -113,19 +113,7 @@ class Costos5ViewController: UIViewController, UITextViewDelegate,MFMailComposeV
         print (codigo_cita)
         
         
-        if (comentarios?.isEmpty)!
-        {
-            //
-            let myAlert = UIAlertController(title:"Aviso", message:"Debes introducir el texto de tu consulta", preferredStyle:
-                UIAlertControllerStyle.alert);
-            let okAction = UIAlertAction(title:"Cerrar", style:
-                UIAlertActionStyle.default, handler:nil)
-            myAlert.addAction(okAction);
-            self.present(myAlert, animated: true, completion: nil)
-            
-            
-            return
-        }
+      
         
         
         let request = NSMutableURLRequest(url: NSURL(string: "http://www.miasesorautomotriz.com/php_ios/scripts/enviarCostos.php")! as URL)
