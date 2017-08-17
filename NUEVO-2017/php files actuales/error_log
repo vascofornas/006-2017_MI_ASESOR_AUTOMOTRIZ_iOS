@@ -1,0 +1,8 @@
+[27-Jan-2017 02:59:26 America/Mexico_City] PHP Warning:  parse_ini_file(../../../../SwiftCourse2.ini): failed to open stream: No such file or directory in /home/miasesor/public_html/php_ios/scripts/userSignIn.php on line 3
+[30-Jan-2017 01:53:39 America/Mexico_City] PHP Warning:  parse_ini_file(../../../../SwiftPhp.ini): failed to open stream: No such file or directory in /home/miasesor/public_html/php_ios/scripts/registerUser.php on line 6
+[30-Jan-2017 01:57:34 America/Mexico_City] PHP Warning:  parse_ini_file(../../../SwiftCourse2.ini): failed to open stream: No such file or directory in /home/miasesor/public_html/php_ios/scripts/getAgencia.php on line 3
+[30-Jan-2017 01:57:37 America/Mexico_City] PHP Warning:  parse_ini_file(../../../SwiftCourse2.ini): failed to open stream: No such file or directory in /home/miasesor/public_html/php_ios/scripts/getAgencia.php on line 3
+[30-Jan-2017 02:26:46 America/Mexico_City] PHP Parse error:  syntax error, unexpected ')' in /home/miasesor/public_html/php_ios/scripts/getAgencia.php on line 6
+[30-Jan-2017 02:27:56 America/Mexico_City] PHP Parse error:  syntax error, unexpected '{' in /home/miasesor/public_html/php_ios/scripts/getAgencia.php on line 7
+[30-Jan-2017 02:28:00 America/Mexico_City] PHP Parse error:  syntax error, unexpected '{' in /home/miasesor/public_html/php_ios/scripts/getAgencia.php on line 7
+[30-Jan-2017 02:28:05 America/Mexico_City] PHP Parse error:  syntax error, unexpected '{' in /home/miasesor/public_html/php_ios/scripts/getAgencia.php on line 7
